@@ -19,9 +19,9 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div>
+            <div className="flex gap-4">
                 <h3 className="text-2xl font-semibold text-"><Link to={'/profile'}>My Profile</Link></h3>
-                <Button buttonText={"Login"} color={"red-800"} hoverColor={"white"}></Button>
+                <Button className="text-2xl font-bold" buttonText={"Login"} color={"red"} hoverColor={"white"} hoverBgColor={"transparent"}></Button>
             </div>
         </nav>
     );

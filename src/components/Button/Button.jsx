@@ -1,9 +1,21 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const Button = (props) => {
-    const { buttonText, color, hoverColor } = props;
+    const [hovered, setHovered] = useState(false);
+    const { className, buttonText, color, hoverColor, hoverBgColor } = props;
+
+    const buttonStyles = {
+        border: `1px solid ${color}`,
+        backgroundColor: hovered ? hoverBgColor : color,
+        color: hovered ? color : hoverColor,
+        transitionDuration: '500ms',
+        transition: 'all 0.3s ease-in-out',
+        padding: '4px 8px 4px',
+        borderRadius: '8px'
+    }
     return (
-        <button className={`border border-${color} bg-${color} text-${hoverColor} rounded-xl hover:bg-${hoverColor} hover:text-${color} transition duration-500 flex justify-center items-center`}>{buttonText}</button>
+        <button className={className} style={buttonStyles} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>{buttonText}</button>
     );
 };
 
@@ -11,6 +23,8 @@ Button.propTypes = {
     buttonText: PropTypes.string,
     color: PropTypes.string,
     hoverColor: PropTypes.string,
+    hoverBgColor: PropTypes.string,
+    className: PropTypes.string,
 }
 
 export default Button;

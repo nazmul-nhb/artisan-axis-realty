@@ -3,7 +3,8 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
-import Profile from "../pages/Home/Profile/Profile";
+import Profile from "../pages/Profile/Profile";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile></Profile>
+            },
+            {
+                path: '/update-profile',
+                element: <UpdateProfile></UpdateProfile>
             },
         ]
     },
