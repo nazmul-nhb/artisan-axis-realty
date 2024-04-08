@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const Button = (props) => {
     const [hovered, setHovered] = useState(false);
-    const { className, buttonText, color, hoverColor, hoverBgColor } = props;
+    const { buttonType, className, buttonText, color, hoverColor, hoverBgColor } = props;
 
     const buttonStyles = {
         border: `1px solid ${color}`,
@@ -11,11 +11,11 @@ const Button = (props) => {
         color: hovered ? color : hoverColor,
         transitionDuration: '500ms',
         transition: 'all 0.3s ease-in-out',
-        padding: '4px 8px 4px',
+        padding: '6px 8px',
         borderRadius: '8px'
     }
     return (
-        <button className={className} style={buttonStyles} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>{buttonText}</button>
+        <button type={buttonType} className={className} style={buttonStyles} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>{buttonText}</button>
     );
 };
 
@@ -25,6 +25,7 @@ Button.propTypes = {
     hoverColor: PropTypes.string,
     hoverBgColor: PropTypes.string,
     className: PropTypes.string,
+    buttonType: PropTypes.string,
 }
 
 export default Button;
