@@ -11,11 +11,31 @@ import { FaXTwitter } from "react-icons/fa6";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { userLogin } = useContext(AuthContext);
+    const { userLogin, googleLogin, facebookLogin } = useContext(AuthContext);
 
     const handleLogin = data => {
         const { email, password } = data;
         userLogin(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                alert(error);
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                alert(error);
+            })
+    }
+
+    const handleFacebookLogin = () => {
+        facebookLogin()
             .then(result => {
                 console.log(result.user);
             })
@@ -66,8 +86,8 @@ const Login = () => {
                 <h3 className="text-center">Or</h3>
                 <h3 className="text-center">Login Using Social Media</h3>
                 <div className="flex gap-4 justify-center items-center text-3xl">
-                    <button className=""><FaGoogle></FaGoogle></button>
-                    <button className=""><FaFacebook></FaFacebook></button>
+                    <button onClick={handleGoogleLogin} className=""><FaGoogle></FaGoogle></button>
+                    <button onClick={handleFacebookLogin} className=""><FaFacebook></FaFacebook></button>
                     <button className=""><FaGithub></FaGithub></button>
                     <button className=""><FaXTwitter></FaXTwitter></button>
                 </div>
