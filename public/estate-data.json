@@ -1,0 +1,209 @@
+[
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Modern Hospital Complex",
+        "id": "HOSP123ABC",
+        "segment_name": "Hospital",
+        "description": "Located in the heart of the city, this modern hospital complex offers state-of-the-art medical facilities and a team of expert healthcare professionals. With spacious patient rooms and advanced equipment, we ensure the highest level of care for our patients.",
+        "price": "$10,000,000",
+        "status": "sale",
+        "area": "50,000 sq ft",
+        "location": {
+            "street": "123 Main Street",
+            "city": "Metropolis",
+            "state": "State",
+            "zip_code": "12345"
+        },
+        "facilities": [
+            "Emergency Room",
+            "Operating Theaters",
+            "Pharmacy"
+        ],
+        "additional_info_1": "Number of Beds: 200",
+        "additional_info_2": "Specialties: Cardiology, Oncology, Neurology"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Elite School Campus",
+        "id": "SCHL456DEF",
+        "segment_name": "School",
+        "description": "Situated amidst lush greenery, this elite school campus provides a nurturing environment for students to excel academically and personally. Our comprehensive curriculum, experienced faculty, and state-of-the-art facilities foster holistic development.",
+        "price": "$5,000,000",
+        "status": "sale",
+        "area": "20 acres",
+        "location": {
+            "street": "456 Elm Street",
+            "city": "Suburbia",
+            "state": "State",
+            "zip_code": "54321"
+        },
+        "facilities": [
+            "Classrooms",
+            "Library",
+            "Science Labs"
+        ],
+        "additional_info_1": "Student Capacity: 1000",
+        "additional_info_2": "Extracurricular Activities: Sports, Arts, Music"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Historic Church Building",
+        "id": "CHRC789GHI",
+        "segment_name": "Religious Facility",
+        "description": "This historic church building, dating back to the 18th century, exudes timeless elegance and spiritual significance. With its majestic architecture and serene ambiance, it serves as a sacred place for worship, reflection, and community gatherings.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "10,000 sq ft",
+        "location": {
+            "street": "789 Oak Street",
+            "city": "Village",
+            "state": "State",
+            "zip_code": "67890"
+        },
+        "facilities": [
+            "Sanctuary",
+            "Fellowship Hall",
+            "Choir Loft"
+        ],
+        "additional_info_1": "Capacity: 60,000 attendees",
+        "additional_info_2": "Architectural Style: Gothic Revival"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Transit Hub",
+        "id": "TRNS1122JKL",
+        "segment_name": "Transportation Terminal",
+        "description": "As a bustling transportation hub, this facility connects commuters to various modes of transit seamlessly. With its strategic location and modern amenities, it facilitates smooth travel experiences for passengers, whether they're commuting locally or internationally.",
+        "price": "$20,000,000",
+        "status": "sale",
+        "area": "100,000 sq ft",
+        "location": {
+            "street": "1122 Pine Street",
+            "city": "Metroville",
+            "state": "State",
+            "zip_code": "98765"
+        },
+        "facilities": [
+            "Train Platforms",
+            "Bus Terminals",
+            "Parking Garage"
+        ],
+        "additional_info_1": "Annual Passenger Count: 5 million",
+        "additional_info_2": "Connected Routes: Interstate Highways, Rail Lines"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Convention Center",
+        "id": "CNVN334MNO",
+        "segment_name": "Convention Center",
+        "description": "This expansive convention center is the ideal venue for hosting large-scale events, conferences, and trade shows. With versatile event spaces, cutting-edge technology, and professional event management services, we ensure successful and memorable gatherings.",
+        "price": "$30,000,000",
+        "status": "sale",
+        "area": "200,000 sq ft",
+        "location": {
+            "street": "334 Maple Avenue",
+            "city": "Metrotown",
+            "state": "State",
+            "zip_code": "13579"
+        },
+        "facilities": [
+            "Exhibition Halls",
+            "Conference Rooms",
+            "Banquet Hall"
+        ],
+        "additional_info_1": "Capacity: 10,000 attendees",
+        "additional_info_2": "Recent Events Hosted: Tech Expo, Medical Conference"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Artisan Market",
+        "id": "ARTS232PQT",
+        "segment_name": "Art Gallery",
+        "description": "Step into a world of creativity and craftsmanship at this artisan market. Featuring works by local artisans, from handcrafted pottery to intricate jewelry, it offers a unique shopping experience that celebrates artistic expression and community spirit.",
+        "price": "$1,500,000",
+        "status": "sale",
+        "area": "5,000 sq ft",
+        "location": {
+            "street": "232 Oak Lane",
+            "city": "Artsville",
+            "state": "State",
+            "zip_code": "24680"
+        },
+        "facilities": [
+            "Craft Stalls",
+            "Workshops",
+            "Café"
+        ],
+        "additional_info_1": "Audience Capacity: 14,000",
+        "additional_info_2": "Featured Artisans: Local Craftsmen, Designers"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Islamic Cultural Center",
+        "id": "ICCN741FRA",
+        "segment_name": "Religious Facility",
+        "description": "Experience the rich cultural heritage and spiritual traditions at this Islamic cultural center. From daily prayers to community events and educational programs, it serves as a beacon of unity and understanding in the diverse tapestry of our society.",
+        "price": "$3,000,000",
+        "status": "sale",
+        "area": "15,000 sq ft",
+        "location": {
+            "street": "741 Cedar Avenue",
+            "city": "Cultural Town",
+            "state": "State",
+            "zip_code": "86420"
+        },
+        "facilities": [
+            "Prayer Hall",
+            "Library",
+            "Community Kitchen"
+        ],
+        "additional_info_1": "Architectural Style: Islamic Architecture",
+        "additional_info_2": "Community Programs: Language Classes, Lectures"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Green Energy Expo",
+        "id": "GRNE555STU",
+        "segment_name": "Convention Center",
+        "description": "Explore the latest innovations and technologies in sustainable energy at this green energy expo. From solar panels to wind turbines and electric vehicles, it showcases solutions for a greener future and promotes environmental awareness.",
+        "price": "$4,000,000",
+        "status": "sale",
+        "area": "30,000 sq ft",
+        "location": {
+            "street": "555 Elm Street",
+            "city": "Eco City",
+            "state": "State",
+            "zip_code": "24681"
+        },
+        "facilities": [
+            "Exhibition Area",
+            "Seminar Rooms",
+            "Networking Lounge"
+        ],
+        "additional_info_1": "Annual Visitors: 50,000",
+        "additional_info_2": "Partnerships: Renewable Energy Companies, NGOs"
+    },
+    {
+        "estate_image": "path_to_image",
+        "estate_title": "Community Art Center",
+        "id": "ARTC567UVW",
+        "segment_name": "Art Gallery",
+        "description": "Fuel your creativity and passion for the arts at this vibrant community art center. From painting workshops to gallery exhibitions and cultural events, it fosters artistic expression and connects individuals through shared experiences.",
+        "price": "$2,000,000",
+        "status": "sale",
+        "area": "8,000 sq ft",
+        "location": {
+            "street": "567 Maple Street",
+            "city": "Artsville",
+            "state": "State",
+            "zip_code": "97531"
+        },
+        "facilities": [
+            "Art Studios",
+            "Exhibition Space",
+            "Workshops"
+        ],
+        "additional_info_1": "Community Programs: Art Classes, Film Screenings",
+        "additional_info_2": "Artist Residency: Available"
+    }
+]
