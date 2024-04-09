@@ -3,7 +3,7 @@ import "./Navbar.css";
 import Button from "../Button/Button";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import defaultPP from '../../assets/user.png'
+import defaultPP from '../../assets/user.png';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);

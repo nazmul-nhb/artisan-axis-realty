@@ -9,13 +9,13 @@ const EstateProvider = ({ children }) => {
 
     useEffect(() => {
         setEstateLoading(true);
-        fetch('./estate-data.json')
+        fetch('estate-data.json')
             .then(respond => respond.json())
             .then(data => setEstates(data))
         setEstateLoading(false);
     }, [])
 
-    const estateInfo = { estates, estateLoading };
+    const estateInfo = { estates, estateLoading, setEstateLoading };
 
     return (
         <EstateContext.Provider value={estateInfo}>
