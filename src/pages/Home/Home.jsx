@@ -1,9 +1,15 @@
+import { useContext } from "react";
+import { EstateContext } from "../../providers/EstateProvider";
 
 const Home = () => {
+    const {estates} = useContext(EstateContext);
+
     return (
-        <div>
-            This is Home
-        </div>
+        <>
+            {
+                estates.map(estate=> console.log(estate))
+            }
+        </>
     );
 };
 

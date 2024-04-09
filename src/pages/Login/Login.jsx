@@ -7,17 +7,20 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { userLogin, googleLogin, facebookLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = data => {
         const { email, password } = data;
         userLogin(email, password)
-            .then(result => {
-                console.log(result.user);
+            .then(() => {
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 alert(error);
@@ -26,8 +29,8 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(result => {
-                console.log(result.user);
+            .then(() => {
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 alert(error);
@@ -36,8 +39,8 @@ const Login = () => {
 
     const handleFacebookLogin = () => {
         facebookLogin()
-            .then(result => {
-                console.log(result.user);
+            .then(() => {
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 alert(error);
