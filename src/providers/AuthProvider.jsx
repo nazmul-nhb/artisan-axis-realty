@@ -11,46 +11,46 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [userLoading, setUserLoading] = useState(true);
 
     const createUser = (email, password) => {
-        setLoading(true);
+        setUserLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const userLogin = (email, password) => {
-        setLoading(true);
+        setUserLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // Sign in with Google
     const googleLogin = () => {
-        setLoading(true);
+        setUserLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     // Sign in with Facebook
     const facebookLogin = () => {
-        setLoading(true);
+        setUserLoading(true);
         return signInWithPopup(auth, facebookProvider)
     }
 
     const logOut = () => {
-        setLoading(true);
+        setUserLoading(true);
         return signOut(auth)
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            setLoading(false);
+            setUserLoading(false);
         });
         return () => {
             unsubscribe();
         }
     }, [])
 
-    const authInfo = { user, createUser, userLogin, googleLogin, facebookLogin, logOut, loading };
+    const authInfo = { user, createUser, userLogin, googleLogin, facebookLogin, logOut, userLoading };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

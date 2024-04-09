@@ -5,14 +5,17 @@ export const EstateContext = createContext(null);
 
 const EstateProvider = ({ children }) => {
     const [estates, setEstates] = useState([]);
+    const [estateLoading, setEstateLoading] = useState(true);
 
     useEffect(() => {
+        setEstateLoading(true);
         fetch('./estate-data.json')
             .then(respond => respond.json())
             .then(data => setEstates(data))
+        setEstateLoading(false);
     }, [])
 
-    const estateInfo = { estates };
+    const estateInfo = { estates, estateLoading };
 
     return (
         <EstateContext.Provider value={estateInfo}>
