@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mx-4 md:mx-8 my-2 md:my-8 p-2 md:px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
                     estates.map(estate => <Estate key={estate.id} estate={estate}></Estate>)
                 }
