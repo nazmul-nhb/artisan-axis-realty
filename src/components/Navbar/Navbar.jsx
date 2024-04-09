@@ -32,7 +32,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="flex items-center gap-2 md:gap-4 mx-4 md:mx-8 my-2 md:my-8 shadow-md p-2 md:px-4 sticky top-0 bg-white z-20">
+        <nav className="flex items-center gap-2 md:gap-4 mx-2 md:mx-8 my-2 md:my-8 shadow-md p-2 md:px-4 sticky top-0 bg-white z-20">
             <div className="lg:hidden text-2xl cursor-pointer" onClick={() => setOpen(!open)}>
                 {
                     open
@@ -49,14 +49,14 @@ const Navbar = () => {
                 </div>
                 {
                     user
-                        ? <div className="flex items-center gap-4">
+                        ? <div className="flex items-center gap-1 md:gap-4">
                             <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
 
                             <div onClick={handleLogout}>
-                                <Button className="text-base md:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button>
+                                <Button className="text-base md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button>
                             </div>
                         </div>
-                        : <Link to={'/login'}><Button className="text-base md:text-2xl font-bold" buttonText={"Login"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button></Link>
+                        : <Link to={'/login'}><Button className="text-base md:text-xl xl:text-2xl font-bold" buttonText={"Login"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button></Link>
                 }
             </div>
         </nav>

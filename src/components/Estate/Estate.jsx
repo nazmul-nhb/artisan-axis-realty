@@ -15,25 +15,25 @@ const Estate = ({ estate }) => {
             </Link>
             <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-1">
-                    <h4 className={status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}>{segment_name}</h4>
+                    <h4 className={`${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'} text-xs xl:text-base`}>{segment_name}</h4>
                     <div className='flex gap-2 items-center'>
-                        <h3 className={`text-lg font-semibold ${status === 'sale' ? 'text-[#16a34a]' : 'text-[#ea580c]'}`} title={`${status === 'sale' ? 'Sale' : 'Rent'}`} >{estate_title}</h3>
+                        <h3 className={`text-sm xl:text-base font-semibold ${status === 'sale' ? 'text-[#16a34a]' : 'text-[#ea580c]'}`} title={`${status === 'sale' ? 'Sale' : 'Rent'}`} >{estate_title}</h3>
                         <div className={`w-5 h-5 text-xs flex items-center justify-center font-bold text-white rounded-full ${status === 'sale' ? 'bg-green-600' : 'bg-orange-600'}`} title={`${status === 'sale' ? 'Sale' : 'Rent'}`}>{status === 'sale' ? "S" : "R"}</div>
                     </div>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <h4 className={`flex justify-end items-center gap-1 text-gray-500 ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}><MdOutlineAreaChart />{area}</h4>
-                    <h2 className={`flex justify-end text-lg font-bold ${status === 'sale' ? 'text-[#16a34a]' : 'text-[#ea580c]'}`} title={`Price: ${price}`}>{price}</h2>
+                    <h4 className={`flex justify-end items-center gap-1 text-gray-500 text-xs xl:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}><MdOutlineAreaChart />{area}</h4>
+                    <h2 className={`flex justify-end text-sm xl:text-lg font-bold ${status === 'sale' ? 'text-[#16a34a]' : 'text-[#ea580c]'}`} title={`Price: ${price}`}>{price}</h2>
                 </div>
             </div>
-            <div className={`flex gap-2 ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
+            <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
                 <h4 className="font-semibold">{additional_info_1.split(': ')[0]}:</h4>
                 <h4 className="">{additional_info_1.split(': ')[1]}</h4>
             </div>
             <hr className={`"border-0 border-t bg-white" ${status === 'sale' ? 'border-[#457456]' : 'border-[#8d6a57]'}`} />
             <div className={`flex justify-between items-center ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                <div className="flex items-center gap-1"><GrLocation />{location.street}, {location.city}</div>
-                <Link className='' to={`/${id}`}><Button className={'font-bold text-xs md:text-base'} buttonText={'View Details'} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button></Link>
+                <div className="text-xs xl:text-sm flex items-center gap-1"><GrLocation />{location.street}, {location.city}</div>
+                <Link className='' to={`/${id}`}><Button className={'font-bold text-xs xl:text-sm'} buttonText={'View Details'} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button></Link>
             </div>
         </div>
     );
