@@ -1,6 +1,6 @@
 [
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642306550_5fc28beb71_o.jpg",
         "estate_title": "Modern Hospital Complex",
         "id": "HOSP123ABC",
         "segment_name": "Hospital",
@@ -23,7 +23,7 @@
         "additional_info_2": "Specialties: Cardiology, Oncology, Neurology"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642185629_56f16b18d6_o.jpg",
         "estate_title": "Elite School Campus",
         "id": "SCHL456DEF",
         "segment_name": "School",
@@ -46,7 +46,7 @@
         "additional_info_2": "Extracurricular Activities: Sports, Arts, Music"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642063128_06571373c5_o.jpg",
         "estate_title": "Historic Church Building",
         "id": "CHRC789GHI",
         "segment_name": "Religious Facility",
@@ -69,13 +69,13 @@
         "additional_info_2": "Architectural Style: Gothic Revival"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642185559_4e1eaae939_o.jpg",
         "estate_title": "Transit Hub",
         "id": "TRNS1122JKL",
         "segment_name": "Transportation Terminal",
         "description": "As a bustling transportation hub, this facility connects commuters to various modes of transit seamlessly. With its strategic location and modern amenities, it facilitates smooth travel experiences for passengers, whether they're commuting locally or internationally.",
         "price": "$20,000,000",
-        "status": "sale",
+        "status": "rent",
         "area": "100,000 sq ft",
         "location": {
             "street": "1122 Pine Street",
@@ -92,13 +92,13 @@
         "additional_info_2": "Connected Routes: Interstate Highways, Rail Lines"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53641849071_11e22a0b0a_o.jpg",
         "estate_title": "Convention Center",
         "id": "CNVN334MNO",
         "segment_name": "Convention Center",
         "description": "This expansive convention center is the ideal venue for hosting large-scale events, conferences, and trade shows. With versatile event spaces, cutting-edge technology, and professional event management services, we ensure successful and memorable gatherings.",
         "price": "$30,000,000",
-        "status": "sale",
+        "status": "rent",
         "area": "200,000 sq ft",
         "location": {
             "street": "334 Maple Avenue",
@@ -115,13 +115,13 @@
         "additional_info_2": "Recent Events Hosted: Tech Expo, Medical Conference"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642185654_21caecccd8_o.jpg",
         "estate_title": "Artisan Market",
         "id": "ARTS232PQT",
         "segment_name": "Art Gallery",
         "description": "Step into a world of creativity and craftsmanship at this artisan market. Featuring works by local artisans, from handcrafted pottery to intricate jewelry, it offers a unique shopping experience that celebrates artistic expression and community spirit.",
         "price": "$1,500,000",
-        "status": "sale",
+        "status": "rent",
         "area": "5,000 sq ft",
         "location": {
             "street": "232 Oak Lane",
@@ -138,7 +138,7 @@
         "additional_info_2": "Featured Artisans: Local Craftsmen, Designers"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642185564_a28e8b75e5_o.jpg",
         "estate_title": "Islamic Cultural Center",
         "id": "ICCN741FRA",
         "segment_name": "Religious Facility",
@@ -161,13 +161,13 @@
         "additional_info_2": "Community Programs: Language Classes, Lectures"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642185619_a3900e90f8_o.jpg",
         "estate_title": "Green Energy Expo",
         "id": "GRNE555STU",
         "segment_name": "Convention Center",
         "description": "Explore the latest innovations and technologies in sustainable energy at this green energy expo. From solar panels to wind turbines and electric vehicles, it showcases solutions for a greener future and promotes environmental awareness.",
         "price": "$4,000,000",
-        "status": "sale",
+        "status": "rent",
         "area": "30,000 sq ft",
         "location": {
             "street": "555 Elm Street",
@@ -184,7 +184,7 @@
         "additional_info_2": "Partnerships: Renewable Energy Companies, NGOs"
     },
     {
-        "estate_image": "path_to_image",
+        "estate_image": "https://live.staticflickr.com/65535/53642306635_65efa31ba5_o.jpg",
         "estate_title": "Community Art Center",
         "id": "ARTC567UVW",
         "segment_name": "Art Gallery",
