@@ -48,8 +48,8 @@ const Login = () => {
     }
 
     return (
-        <section className="text-teal-900 space-y-6 flex flex-col justify-center items-center">
-            <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-1/2 px-20 py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
+        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col justify-center items-center">
+            <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
                 <h2 className="text-2xl font-medium">Please, Login</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="email">Your Email</label>
@@ -79,10 +79,10 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="flex gap-2">
-                    <h3>Forgot Password? <button>Click Here</button></h3>
+                    <h3>Forgot Password? <button className="text-red-700">Click Here</button></h3>
                 </div>
                 <Button buttonType={'submit'} className={'w-full text-xl font-semibold'} buttonText={'Login'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
-                <p className="font-medium">New to this site? Please, <Link to={'/register'}>Register Here!</Link></p>
+                <p className="text-center text-sm md:text-base font-medium">New to this site? Please, <Link className="text-red-700" to={'/register'}>Register Here!</Link></p>
             </form>
             {/* Social Login */}
             <div className="flex flex-col gap-2">

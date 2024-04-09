@@ -33,7 +33,7 @@ const Register = () => {
 
     return (
         <section className="text-teal-900 space-y-6 flex flex-col justify-center items-center">
-            <form onSubmit={handleSubmit(handleRegister)} className="flex flex-col gap-6 w-1/2 px-20 py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
+            <form onSubmit={handleSubmit(handleRegister)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
                 <h2 className="text-2xl font-medium">Please, Register</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="name">Your Name</label>
@@ -88,7 +88,7 @@ const Register = () => {
                     <label htmlFor="terms">Accept Our <Link>Terms & Conditions</Link></label>
                 </div>
                 <Button buttonType={'submit'} className={'w-full text-xl font-semibold'} buttonText={'Register'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
-                <p className="font-medium">Already have an Account? Please, <Link to={'/login'}>Login Here!</Link></p>
+                <p className="text-center text-sm md:text-base font-medium">Already have an Account? Please, <Link className="text-red-700" to={'/login'}>Login Here!</Link></p>
             </form>
         </section>
     );
