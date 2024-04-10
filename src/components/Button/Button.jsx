@@ -6,7 +6,7 @@ const Button = (props) => {
     const { buttonType, className, buttonText, color, hoverColor, hoverBgColor } = props;
 
     const buttonStyles = {
-        border: `1px solid ${color}`,
+        borderColor: color,
         backgroundColor: hovered ? hoverBgColor : color,
         color: hovered ? color : hoverColor,
         transitionDuration: '500ms',

@@ -81,7 +81,7 @@ const Login = () => {
                 <div className="flex gap-2">
                     <h3>Forgot Password? <button className="text-red-700">Click Here</button></h3>
                 </div>
-                <Button buttonType={'submit'} className={'w-full text-xl font-semibold'} buttonText={'Login'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Login'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
                 <p className="text-center text-sm md:text-base font-medium">New to this site? Please, <Link className="text-red-700" to={'/register'}>Register Here!</Link></p>
             </form>
             {/* Social Login */}

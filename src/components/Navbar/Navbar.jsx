@@ -54,10 +54,10 @@ const Navbar = () => {
                             <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
 
                             <div onClick={handleLogout}>
-                                <Button className="text-base md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button>
+                                <Button className="border text-base md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button>
                             </div>
                         </div>
-                        : <Link to={'/login'}><Button className="text-base md:text-xl xl:text-2xl font-bold" buttonText={"Login"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button></Link>
+                        : <Link to={'/login'}><Button className="border text-base md:text-xl xl:text-2xl font-bold" buttonText={"Login"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button></Link>
                 }
             </div>
         </nav>

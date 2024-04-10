@@ -92,7 +92,7 @@ const Register = () => {
                     <input type="checkbox" name="terms" id="terms" />
                     <label htmlFor="terms">Accept Our <Link>Terms & Conditions</Link></label>
                 </div>
-                <Button buttonType={'submit'} className={'w-full text-xl font-semibold'} buttonText={'Register'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Register'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
                 <p className="text-center text-sm md:text-base font-medium">Already have an Account? Please, <Link className="text-red-700" to={'/login'}>Login Here!</Link></p>
             </form>
         </section>
