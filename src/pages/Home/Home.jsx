@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import { EstateContext } from "../../providers/EstateProvider";
 import Estate from "../../components/Estate/Estate";
 import Slider from "../../components/Slider/Slider";
+import sliderBG from '../../assets/bg-slider.svg';
 
 const Home = () => {
     // const { estates, estateLoading } = useContext(EstateContext);
@@ -28,8 +29,13 @@ const Home = () => {
 
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
-            {/* Slider */}
-            <div className="flex items-center justify-center">
+            <div className="my-2 md:my-8 flex flex-col lg:flex-row items-center justify-between px-4 py-2 rounded-lg shadow-xl"
+                style={{ backgroundImage: `url(${sliderBG})` }}>
+                {/* Banner */}
+                <div className="">
+                    {/* <img src={sliderBG} alt="" /> */}
+                </div>
+                {/* Slider */}
                 <Slider></Slider>
             </div>
             {/* Estate Cards */}

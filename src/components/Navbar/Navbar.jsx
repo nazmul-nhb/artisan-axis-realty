@@ -17,10 +17,12 @@ const Navbar = () => {
             user
                 ? <><li><NavLink to={'/update-profile'}>Update Profile</NavLink></li>
                     <li><NavLink to={'/profile'}>My Profile</NavLink></li></>
-                : <><li><NavLink to={'/login'}>Login</NavLink></li>
-                    <li><NavLink to={'/register'}>Register</NavLink></li></>
+                : <>
+                    {/* <li><NavLink to={'/login'}>Login</NavLink></li>
+                    <li><NavLink to={'/register'}>Register</NavLink></li> */}
+                </>
         }
-        <li className=""><NavLink to={'/contact'}>Contact</NavLink></li>
+        <li><NavLink to={'/contact'}>Contact</NavLink></li>
         <li><NavLink to={'/about'}>About</NavLink></li>
     </>
 
@@ -42,9 +44,9 @@ const Navbar = () => {
                 }
             </div>
             <div className="flex justify-between items-center w-full">
-                <h3 className="text-base md:text-2xl font-semibold"><span className="text-[#16a34a]"><span className="text-xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-xl md:text-4xl">&#9074;</span>xis</span> Realty</h3>
+                <h3 className="text-base md:text-2xl font-semibold"><Link to='/'><span className="text-[#16a34a]"><span className="text-xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-xl md:text-4xl">&#9074;</span>xis</span> Realty</Link></h3>
                 <div className="text-sm md:text-base">
-                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-4 font-medium duration-1000 absolute lg:static shadow-xl lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-12 bg-white flex z-10 ' : '-left-60 top-12'}`}>
+                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-4 font-medium duration-500 absolute lg:static shadow-xl lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-12 bg-white flex z-10' : '-left-60 top-12'}`}>
                         {navLinks}
                     </ul>
                 </div>
