@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="font-workSans w-full mx-auto flex flex-col gap-6 p-8 lg:p-24 bg-[#12132d0d] lg:mt-24 mt-8">
+        <footer className="w-full mx-auto flex flex-col gap-6 p-8 lg:p-24 bg-[#12132d0d] lg:mt-24 mt-8">
             <div className="text-center flex flex-col items-center gap-6 mb-4">
-                <h3 className="text-[#12132D] font-extrabold text-[28px] hover:text-[#59C6D2] lg:text-4xl transition duration-500"><Link to={'/about'}>ArtisanAxis Realty</Link></h3>
+                <h3 className="text-lg md:text-2xl font-bold transition duration-500 hover:text-[#16a34a]"><Link to={'/about'}><span className="text-[#16a34a] hover:text-[#ea580c]"><span className="text-2xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c] hover:text-[#16a34a]"><span className="text-2xl md:text-4xl">&#9074;</span>xis</span> Realty</Link></h3>
                 <p className="w-full lg:w-2/5 mx-auto text-[#12132DB3]">Where Artistry Meets Architecture.
                 <br />
                 Creating Destinations, Cultivating Community!</p>

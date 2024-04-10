@@ -20,7 +20,8 @@ const Navbar = () => {
                 : <><li><NavLink to={'/login'}>Login</NavLink></li>
                     <li><NavLink to={'/register'}>Register</NavLink></li></>
         }
-
+        <li className=""><NavLink to={'/contact'}>Contact</NavLink></li>
+        <li><NavLink to={'/about'}>About</NavLink></li>
     </>
 
     const handleLogout = () => {
@@ -32,7 +33,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="flex items-center gap-2 md:gap-4 mx-2 md:mx-8 my-2 md:my-8 shadow-md p-2 md:px-4 sticky top-0 bg-white z-20">
+        <nav className="flex items-center gap-2 md:gap-4 mx-0 my-2 md:my-8 shadow-md px-4 py-3 md:px-[5.4%] sticky top-0 bg-white z-20">
             <div className="lg:hidden text-2xl cursor-pointer" onClick={() => setOpen(!open)}>
                 {
                     open
@@ -41,9 +42,9 @@ const Navbar = () => {
                 }
             </div>
             <div className="flex justify-between items-center w-full">
-                <h3 className="text-base md:text-2xl font-semibold">ArtisanAxis Realty</h3>
+                <h3 className="text-base md:text-2xl font-semibold"><span className="text-[#16a34a]"><span className="text-xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-xl md:text-4xl">&#9074;</span>xis</span> Realty</h3>
                 <div className="text-sm md:text-base">
-                    <ul className={`flex flex-col lg:flex-row justify-start lg:justify-center gap-4 lg:gap-6 font-medium duration-1000 absolute lg:static shadow-xl lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-12 bg-white flex z-10 ' : '-left-60 top-12'}`}>
+                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-4 font-medium duration-1000 absolute lg:static shadow-xl lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-12 bg-white flex z-10 ' : '-left-60 top-12'}`}>
                         {navLinks}
                     </ul>
                 </div>

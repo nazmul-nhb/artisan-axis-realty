@@ -32,9 +32,9 @@ const Register = () => {
     }
 
     return (
-        <section className="text-teal-900 space-y-6 flex flex-col justify-center items-center">
+        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col justify-center items-center">
             <form onSubmit={handleSubmit(handleRegister)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
-                <h2 className="text-2xl font-medium">Please, Register</h2>
+                <h2 className="text-lg md:text-2xl font-medium">Please, Register</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="name">Your Name</label>
                     <input
@@ -49,7 +49,12 @@ const Register = () => {
                 </div>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="photo">Your Photo</label>
-                    <input className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
+                    <input
+                        {...register("photo", {
+                            required:
+                                { value: false, message: "You must provide a valid photo URL." }
+                        })}
+                         className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
                 </div>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="email">Your Email</label>
