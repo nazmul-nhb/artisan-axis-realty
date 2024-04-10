@@ -1,9 +1,21 @@
-import { useContext } from "react";
-import { EstateContext } from "../../providers/EstateProvider";
+import { useEffect, useState } from "react";
+// import { EstateContext } from "../../providers/EstateProvider";
 import Estate from "../../components/Estate/Estate";
+import Slider from "../../components/Slider/Slider";
 
 const Home = () => {
-    const { estates, estateLoading } = useContext(EstateContext);
+    // const { estates, estateLoading } = useContext(EstateContext);
+    const [estates, setEstates] = useState([]);
+    const [estateLoading, setEstateLoading] = useState(true);
+
+    useEffect(() => {
+        setEstateLoading(true);
+        fetch('./estate-data.json')
+            .then(respond => respond.json())
+            .then(data => setEstates(data))
+        setEstateLoading(false);
+    }, [])
+
     if (estateLoading) {
         return (
             <div className="flex items-center justify-center space-x-2">
@@ -13,15 +25,20 @@ const Home = () => {
             </div>
         )
     }
-    return (
-        <>
 
-            <div className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    return (
+        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
+            {/* Slider */}
+            <div className=" flex items-center justify-center">
+                <Slider></Slider>
+            </div>
+            {/* Estate Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {
                     estates.map(estate => <Estate key={estate.id} estate={estate}></Estate>)
                 }
             </div>
-        </>
+        </section>
     );
 };
 
