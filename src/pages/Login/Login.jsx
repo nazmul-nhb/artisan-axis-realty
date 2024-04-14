@@ -16,16 +16,17 @@ const Login = () => {
     const { userLogin, googleLogin, facebookLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const [loginError, setLoginError] = useState(null)
+    // const [loginError, setLoginError] = useState(null);
 
     const handleLogin = data => {
         const { email, password } = data;
         userLogin(email, password)
             .then(() => {
+                toast.success("Logged in Successfully!");
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                setLoginError(error);
+                // setLoginError(error);
                 if (error.message.split(': ')[1] === "Error (auth/invalid-login-credentials).") {
                     toast.error("Email & Password Did Not Match");
                 }
