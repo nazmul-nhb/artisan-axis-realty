@@ -1,21 +1,30 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [regError, setRegError] = useState('')
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+    // const location = useLocation();
 
     const handleRegister = data => {
         const { name, photo, email, password } = data;
+        if (errors.password) {
+            toast.error(errors.password.message);
+        }
         createUser(email, password)
             .then(result => {
+                console.log(result.user);
+                // toast.warning(errors.password.message)
                 // update profile
                 updateProfile(result.user, {
                     displayName: name,
@@ -25,9 +34,13 @@ const Register = () => {
                     .catch(error => {
                         alert(error);
                     })
+                toast.success("Registration Successful!");
+                logOut();
+                navigate('/login');
             })
             .catch(error => {
-                alert(error);
+                setRegError(error);
+                // toast.error(error);
             })
     }
 
@@ -54,30 +67,61 @@ const Register = () => {
                             required:
                                 { value: false, message: "You must provide a valid photo URL." }
                         })}
-                         className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
+                        className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
                 </div>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="email">Your Email</label>
                     <input
                         {...register("email", {
                             required:
-                                { value: true, message: "You must provide your email address." }
+                                { value: true, message: "You must provide a valid email address." }
                         })}
                         className="p-2 rounded-lg bg-[#F3F3F3]" type="email" name="email" id="email" placeholder="Your Email" />
                 </div>
+                {
+                    errors.email && <p className="text-red-700">{errors.email.message}</p>
+                }
                 <div className="flex flex-col gap-3">
                     <label htmlFor="password">Your Password</label>
                     <div className="relative">
                         <input
                             {...register("password", {
-                                required:
-                                    { value: true, message: "You must choose a password." }
+                                required: {
+                                    value: true, message: "You must choose a password."
+                                },
+                                minLength: {
+                                    value: 6, message: "Password should be at least 6 characters long!"
+                                },
+                                validate: {
+                                    isUpper: (value) => {
+                                        if (/(?=.*[A-Z])/.test(value)) {
+                                            return true;
+                                        }
+                                        return "Password must contain at least 1 upper case character!"
+                                    },
+                                    isLower: (value) => {
+                                        if (/(?=.*[a-z])/.test(value)) {
+                                            return true;
+                                        }
+                                        return "Password must contain at least 1 lower case character!"
+                                    }
+                                }
+                                // pattern: {
+                                //     value: /(?=.*[a-z])/, message: "Password must contain at least 1 lower case character!"
+                                // },
+                                // pattern: {
+                                //     value: /(?=.*[A-Z])/, message: "Password must contain at least 1 upper case character!"
+                                // },
                             })}
                             className="p-2 rounded-lg w-full bg-[#F3F3F3]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Your Password" />
                         <span className="absolute top-1/2 right-2 -translate-y-1/2" onClick={() => setShowPassword(!showPassword)} >{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                     </div>
                 </div>
-
+                {
+                    errors.password && (
+                        // toast.error(errors.password.message),
+                        <p className="text-red-700">{errors.password.message}</p>)
+                }
                 {/* <label htmlFor="confirm-password">Confirm Your Password</label>
                     <div className="relative">
                         <input

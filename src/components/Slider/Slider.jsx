@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
@@ -46,9 +46,14 @@ const Slider = () => {
                     '--swiper-pagination-color': 'orange',
                 }}
                 loop={true}
+                autoplay={{
+                    delay: 3000,
+                    pauseOnMouseEnter: false,
+                    disableOnInteraction: false,
+                }}
                 pagination={pagination}
                 navigation={true}
-                modules={[Navigation, Pagination]}
+                modules={[Autoplay, Navigation, Pagination]}
                 className="mySwiper shadow-md shadow-[#ea580c] rounded-lg"
             >
                 {
