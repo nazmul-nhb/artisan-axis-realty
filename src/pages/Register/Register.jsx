@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const [regError, setRegError] = useState('')
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -24,7 +23,8 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                // toast.warning(errors.password.message)
+                // toast.warning(errors.password.message);
+
                 // update profile
                 updateProfile(result.user, {
                     displayName: name,
@@ -32,14 +32,16 @@ const Register = () => {
                 })
                     .then(() => { })
                     .catch(error => {
-                        alert(error);
+                        toast.error(error.message.split(': ')[1]);
                     })
                 toast.success("Registration Successful!");
                 logOut();
                 navigate('/login');
             })
             .catch(error => {
-                setRegError(error);
+                if (error.message.split(': ')[1] === "Error (auth/email-already-in-use).") {
+                    toast.error(`Registration Failed! Your Email is Already Registered!`);
+                }
                 // toast.error(error);
             })
     }

@@ -8,6 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useNavigate, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +16,7 @@ const Login = () => {
     const { userLogin, googleLogin, facebookLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [loginError, setLoginError] = useState(null)
 
     const handleLogin = data => {
         const { email, password } = data;
@@ -23,7 +25,10 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                alert(error);
+                setLoginError(error);
+                if (error.message.split(': ')[1] === "Error (auth/invalid-login-credentials).") {
+                    toast.error("Email & Password Did Not Match");
+                }
             })
     }
 
@@ -33,7 +38,8 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                alert(error);
+                // setLoginError(error);
+                toast.error(error.message.split(': ')[1]);
             })
     }
 
@@ -43,7 +49,8 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                alert(error);
+                // setLoginError(error);
+                toast.error(error.message.split(': ')[1]);
             })
     }
 
@@ -78,6 +85,9 @@ const Login = () => {
                         <span className="absolute top-1/2 right-2 -translate-y-1/2" onClick={() => setShowPassword(!showPassword)} >{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                     </div>
                 </div>
+                {/* {
+                    loginError ? <p className="text-red-700">{loginError}</p> : null
+                } */}
                 <div className="flex gap-2">
                     <h3>Forgot Password? <button className="text-red-700">Click Here</button></h3>
                 </div>
@@ -89,8 +99,8 @@ const Login = () => {
                 <h3 className="text-center">Or</h3>
                 <h3 className="text-center">Login Using Social Media</h3>
                 <div className="flex gap-4 justify-center items-center text-3xl">
-                    <button onClick={handleGoogleLogin} className=""><FaGoogle></FaGoogle></button>
-                    <button onClick={handleFacebookLogin} className=""><FaFacebook></FaFacebook></button>
+                    <button onClick={handleGoogleLogin} className="text-[#4285f4] hover:text-green-700"><FaGoogle></FaGoogle></button>
+                    <button onClick={handleFacebookLogin} className="text-[#0964ff] hover:text-green-700"><FaFacebook></FaFacebook></button>
                     <button className=""><FaGithub></FaGithub></button>
                     <button className=""><FaXTwitter></FaXTwitter></button>
                 </div>
