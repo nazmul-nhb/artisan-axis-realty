@@ -57,7 +57,7 @@ const Slider = () => {
                             <div className="flex relative">
                                 <img className="rounded-lg" src={estate.estate_image} alt={estate.estate_title} />
                                 <div className="bg-[#ffffff90] absolute top-0 flex flex-col md:flex-row justify-between md:items-center md:gap-0 gap-1 w-full py-1 px-2">
-                                    <div className="flex flex-col items-start">
+                                    <div className="flex flex-col items-center md:items-start">
                                         <div className={`flex gap-2 text-xs md:text-sm lg:text-base ${estate.status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
                                             <h4 className="font-semibold">{estate.additional_info_1.split(': ')[0]}:</h4>
                                             <h4 className="">{estate.additional_info_1.split(': ')[1]}</h4>
@@ -67,7 +67,7 @@ const Slider = () => {
                                             <h4 className="">{estate.additional_info_2.split(': ')[1]}</h4>
                                         </div>
                                     </div>
-                                    <Link to={`/${estate.id}`}><Button className={'font-bold border-2 text-xs xl:text-sm'} buttonText={`${estate.status === 'sale' ? 'Buy Now' : 'Rent Now'}`} color={`${estate.status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button></Link>
+                                    <Link className="flex justify-center items-center" to={`/${estate.id}`}><Button className={'font-bold border-2 text-xs xl:text-sm'} buttonText={`${estate.status === 'sale' ? 'Buy Now' : 'Rent Now'}`} color={`${estate.status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button></Link>
                                 </div>
                             </div>
                         </SwiperSlide>)

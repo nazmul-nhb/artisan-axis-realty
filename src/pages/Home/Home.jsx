@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // import { EstateContext } from "../../providers/EstateProvider";
 import Estate from "../../components/Estate/Estate";
 import Slider from "../../components/Slider/Slider";
-import sliderBG from '../../assets/bg-slider.svg';
+// import sliderBG from '../../assets/banner.jpeg';
 
 const Home = () => {
     // const { estates, estateLoading } = useContext(EstateContext);
@@ -29,8 +29,8 @@ const Home = () => {
 
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
-            <div className="my-2 md:my-8 flex flex-col lg:flex-row items-center justify-between px-4 py-2 rounded-lg shadow-xl"
-                style={{ backgroundImage: `url(${sliderBG})` }}>
+            <div className="my-2 md:my-8 flex flex-col lg:flex-row items-center justify-between px-4 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#ea310c] to-[#09973d] h-full">
+                {/* style={{ backgroundImage: `url(${sliderBG})` }} */}
                 {/* Banner */}
                 <div className="">
                     {/* <img src={sliderBG} alt="" /> */}
