@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { userLogin, googleLogin, facebookLogin, githubLogin } = useContext(AuthContext);
+    const { userLogin, googleLogin, facebookLogin, githubLogin, twitterLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     // const [loginError, setLoginError] = useState(null);
@@ -57,6 +57,17 @@ const Login = () => {
 
     const handleGithubLogin = () => {
         githubLogin()
+            .then(() => {
+                toast.success("Successfully Logged in!");
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                toast.error(error.message.split(': ')[1]);
+            })
+    }
+
+    const handleTwitterLogin = () => {
+        twitterLogin()
             .then(() => {
                 toast.success("Successfully Logged in!");
                 navigate(location?.state ? location.state : '/');
@@ -114,7 +125,7 @@ const Login = () => {
                     <button onClick={handleGoogleLogin} className="text-[#4285f4] hover:text-green-700"><FaGoogle></FaGoogle></button>
                     <button onClick={handleFacebookLogin} className="text-[#0964ff] hover:text-green-700"><FaFacebook></FaFacebook></button>
                     <button onClick={handleGithubLogin} className="text-[#000000] hover:text-green-700"><FaGithub></FaGithub></button>
-                    <button className=""><FaXTwitter></FaXTwitter></button>
+                    <button onClick={handleTwitterLogin} className="text-[#000000] hover:text-green-700"><FaXTwitter></FaXTwitter></button>
                 </div>
             </div>
         </section>

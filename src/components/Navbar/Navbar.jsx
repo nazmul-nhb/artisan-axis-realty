@@ -63,7 +63,7 @@ const Navbar = () => {
                 {
                     user
                         ? <div className="flex items-center gap-1 md:gap-2">
-                            <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
+                            <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full border-2 p-[2px] border-green-900" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
 
                             <div className="cursor-pointer text-4xl md:text-5xl text-[#e85800] hover:text-[#236d3e]" title="Logout" onClick={handleLogout}>
                                 <FiLogOut />

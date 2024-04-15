@@ -1,12 +1,13 @@
 import { createContext, useEffect } from "react";
 import PropTypes from 'prop-types';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, GithubAuthProvider, TwitterAuthProvider } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase/firebase.config";
 
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
 
 export const AuthContext = createContext(null);
 
@@ -42,6 +43,12 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, githubProvider)
     }
 
+    // Sign in with Twitter
+    const twitterLogin = () => {
+        setUserLoading(true);
+        return signInWithPopup(auth, twitterProvider)
+    }
+
     const logOut = () => {
         setUserLoading(true);
         return signOut(auth)
@@ -58,7 +65,7 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const authInfo = { user, createUser, userLogin, googleLogin, facebookLogin, githubLogin, logOut, userLoading, setUserLoading };
+    const authInfo = { user, createUser, userLogin, googleLogin, facebookLogin, githubLogin, twitterLogin, logOut, userLoading, setUserLoading };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
