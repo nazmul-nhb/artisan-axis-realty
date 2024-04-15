@@ -35,7 +35,7 @@ const EstateDetails = () => {
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList>
                     <Tab>Property Details</Tab>
-                    <Tab>Find Property on Map</Tab>
+                    <Tab>Find on Map</Tab>
                 </TabList>
                 <TabPanel>
                     <img src={estate_image} alt={estate_title} />

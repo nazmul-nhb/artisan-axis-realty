@@ -38,12 +38,12 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="flex items-center gap-2 md:gap-4 mx-0 shadow-md px-4 py-3 md:px-[5.4%] sticky top-0 bg-white z-20">
-            <div className="lg:hidden text-2xl cursor-pointer" onClick={() => setOpen(!open)}>
+        <nav className="flex items-center gap-0 md:gap-4 mx-0 shadow-md px-4 py-3 md:px-[5.4%] sticky top-0 bg-white bg-opacity-95 z-20">
+            <div className="lg:hidden text-4xl md:text-5xl cursor-pointer" onClick={() => setOpen(!open)}>
                 {
                     open
-                        ? <MdOutlineClose></MdOutlineClose>
-                        : <MdMenuOpen></MdMenuOpen>
+                        ? <MdOutlineClose className="text-[#e85800] hover:text-[#236d3e]"></MdOutlineClose>
+                        : <MdMenuOpen className="text-[#236d3e] hover:text-[#e85800]"></MdMenuOpen>
                 }
             </div>
             <div className="flex justify-between items-center w-full">
@@ -55,17 +55,17 @@ const Navbar = () => {
                         </div>
                     </div>
                 </Link>
-                <div className="text-sm md:text-base">
-                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-4 font-medium duration-500 absolute lg:static shadow-xl lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-12 bg-white flex z-10' : '-left-60 top-12'}`}>
+                <div className="text-sm xl:text-base">
+                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-4 font-medium duration-500 absolute lg:static shadow-md shadow-slate-700 lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-16 md:top-20 bg-white bg-opacity-90 flex z-10' : '-left-96 top-16 md:top-20'}`}>
                         {navLinks}
                     </ul>
                 </div>
                 {
                     user
-                        ? <div className="flex items-center gap-1 md:gap-4">
+                        ? <div className="flex items-center gap-1 md:gap-2">
                             <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
 
-                            <div className="cursor-pointer" onClick={handleLogout}>
+                            <div className="cursor-pointer text-4xl md:text-5xl text-[#e85800] hover:text-[#236d3e]" title="Logout" onClick={handleLogout}>
                                 <FiLogOut />
                                 {/* <Button className="border text-sm md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button> */}
                             </div>

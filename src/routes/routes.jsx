@@ -8,6 +8,7 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Contact from "../pages/Contact/Contact";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/:id',

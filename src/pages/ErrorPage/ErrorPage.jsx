@@ -1,7 +1,6 @@
 // import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 
 const ErrorPage = () => {
 
@@ -24,10 +23,9 @@ const ErrorPage = () => {
                     </svg>
                     <p className="text-lg font-semibold md:text-3xl">Sorry, we couldn&rsquo;t find this page.</p>
                     <p className="mt-4 mb-8 dark:text-gray-600">But don&rsquo;t worry, you can find plenty of other things on our homepage.</p>
-                    <Link to={'/'} rel="noopener noreferrer" href="#" className="px-8 py-3 font-semibold bg-[#ea580c] text-white border border-[#ea580c] rounded-xl hover:bg-white hover:text-[#ea580c] transition duration-500">Back to homepage</Link>
+                    <Link to={'/'} rel="noopener noreferrer" href="#" className="px-8 py-3 font-semibold bg-[#ea580c] text-white border border-[#ea580c] rounded-xl hover:bg-white hover:text-[#ea580c] transition duration-500">Back to Homepage</Link>
                 </div>
             </section>
-            <Footer></Footer>
         </>
     );
 };
