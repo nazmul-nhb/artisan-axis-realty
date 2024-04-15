@@ -89,7 +89,7 @@
             "Parking Garage"
         ],
         "additional_info_1": "Annual Passenger Count: 5 million",
-        "additional_info_2": "Connected Routes: Interstate Highways, Rail Lines"
+        "additional_info_2": "Connected Routes: Highways, Rail Lines"
     },
     {
         "estate_image": "https://live.staticflickr.com/65535/53641849071_11e22a0b0a_o.jpg",
@@ -102,7 +102,7 @@
         "area": "200,000 sq ft",
         "location": {
             "street": "334 Maple Avenue",
-            "city": "Metrotown",
+            "city": "Metro",
             "state": "State",
             "zip_code": "13579"
         },
@@ -112,7 +112,7 @@
             "Banquet Hall"
         ],
         "additional_info_1": "Capacity: 10,000 attendees",
-        "additional_info_2": "Recently Hosted: Tech Expo, Medical Conference"
+        "additional_info_2": "Recently Hosted: Tech Expo, Med Conference"
     },
     {
         "estate_image": "https://live.staticflickr.com/65535/53642185654_21caecccd8_o.jpg",
@@ -158,7 +158,7 @@
             "Community Kitchen"
         ],
         "additional_info_1": "Architectural Style: Islamic Architecture",
-        "additional_info_2": "Community Programs: Language Classes, Lectures"
+        "additional_info_2": "Programs: Language Classes, Lectures"
     },
     {
         "estate_image": "https://live.staticflickr.com/65535/53642185619_a3900e90f8_o.jpg",
@@ -181,7 +181,7 @@
             "Networking Lounge"
         ],
         "additional_info_1": "Annual Visitors: 50,000",
-        "additional_info_2": "Partnerships: Renewable Energy Companies, NGOs"
+        "additional_info_2": "Partnerships: Energy Companies, NGOs"
     },
     {
         "estate_image": "https://live.staticflickr.com/65535/53642306635_65efa31ba5_o.jpg",
@@ -203,7 +203,7 @@
             "Exhibition Space",
             "Workshops"
         ],
-        "additional_info_1": "Community Programs: Art Classes, Film Screenings",
+        "additional_info_1": "Programs: Art Classes, Film Screenings",
         "additional_info_2": "Artist Residency: Available"
     }
 ]

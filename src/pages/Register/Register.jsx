@@ -34,7 +34,7 @@ const Register = () => {
                     .catch(error => {
                         toast.error(error.message.split(': ')[1]);
                     })
-                toast.success("Registration Successful!");
+                toast.success("Registration Successful! Please, Login Now!");
                 logOut();
                 navigate('/login');
             })

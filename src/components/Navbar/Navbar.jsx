@@ -6,6 +6,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import defaultPP from '../../assets/user.png';
 import { MdMenuOpen, MdOutlineClose } from "react-icons/md";
 import logo from '../../assets/aa-logo-home.png';
+import { FiLogOut } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -31,7 +33,7 @@ const Navbar = () => {
         logOut()
             .then(() => { })
             .catch(error => {
-                alert(error);
+                toast.error(error.message.split(': ')[1]);
             })
     }
 
@@ -63,11 +65,12 @@ const Navbar = () => {
                         ? <div className="flex items-center gap-1 md:gap-4">
                             <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
 
-                            <div onClick={handleLogout}>
-                                <Button className="border text-base md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button>
+                            <div className="cursor-pointer" onClick={handleLogout}>
+                                <FiLogOut />
+                                {/* <Button className="border text-sm md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button> */}
                             </div>
                         </div>
-                        : <Link to={'/login'}><Button className="border text-base md:text-xl xl:text-2xl font-bold" buttonText={"Login"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button></Link>
+                        : <Link to={'/login'}><Button className="border text-sm md:text-xl xl:text-2xl font-bold" buttonText={"Login"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button></Link>
                 }
             </div>
         </nav>

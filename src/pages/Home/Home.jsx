@@ -29,7 +29,7 @@ const Home = () => {
 
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
-            <div className="my-2 md:my-8 flex flex-col lg:flex-row items-center justify-between px-4 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#ea310c] to-[#09973d] h-full">
+            <div className="my-2 md:my-8 flex flex-col lg:flex-row items-center justify-between px-4 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#16a34a57] to-[#4c00ffa3]">
                 {/* style={{ backgroundImage: `url(${sliderBG})` }} */}
                 {/* Banner */}
                 <div className="">

@@ -54,7 +54,7 @@ const Slider = () => {
                 pagination={pagination}
                 navigation={true}
                 modules={[Autoplay, Navigation, Pagination]}
-                className="mySwiper shadow-md shadow-[#ea580c] rounded-lg"
+                className="mySwiper shadow-md shadow-[#4c00ffa3] rounded-lg"
             >
                 {
                     estates.map(estate =>
