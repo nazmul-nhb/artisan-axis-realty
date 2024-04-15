@@ -9,6 +9,7 @@ import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -79,6 +80,9 @@ const Login = () => {
 
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col justify-center items-center">
+            <Helmet>
+                <title>ArtisanAxis : : Login</title>
+            </Helmet>
             <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
                 <h2 className="text-2xl font-medium">Please, Login</h2>
                 <div className="flex flex-col gap-3">

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PropertyLocation from "../../components/PropertyLocation/PropertyLocation";
+import { Helmet } from 'react-helmet-async';
 
 const EstateDetails = () => {
     const [selectedEstate, setSelectedEstate] = useState({});
@@ -32,6 +33,9 @@ const EstateDetails = () => {
     const { estate_image, estate_title, segment_name, price, status, area, additional_info_1, additional_info_2,  location } = selectedEstate;
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
+            <Helmet>
+                <title>ArtisanAxis : : {estate_title}</title>
+            </Helmet>
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList>
                     <Tab>Property Details</Tab>

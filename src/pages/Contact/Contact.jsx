@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import contactDoodle from '../../assets/contact.png';
 import success from '../../assets/success.png';
-// import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
 
@@ -28,9 +28,9 @@ const Contact = () => {
 
     return (
         <div className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 grid grid-cols-1 gap-8 rounded-2xl md:grid-cols-2 dark:bg-gray-100 dark:text-gray-800">
-            {/* <Helmet>
-                <title>Contact Verse Voyage</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Contact ArtisanAxis</title>
+            </Helmet>
             <div className="flex flex-col justify-between">
                 <div className="space-y-8">
                     <h2 className="text-2xl md:text-4xl font-bold leading-tight lg:text-5xl">Let&rsquo;s talk!</h2>
