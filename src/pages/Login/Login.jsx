@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { userLogin, googleLogin, facebookLogin } = useContext(AuthContext);
+    const { userLogin, googleLogin, facebookLogin, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     // const [loginError, setLoginError] = useState(null);
@@ -22,7 +22,7 @@ const Login = () => {
         const { email, password } = data;
         userLogin(email, password)
             .then(() => {
-                toast.success("Logged in Successfully!");
+                toast.success("Successfully Logged in!");
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -36,10 +36,10 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(() => {
+                toast.success("Successfully Logged in!");
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                // setLoginError(error);
                 toast.error(error.message.split(': ')[1]);
             })
     }
@@ -47,10 +47,21 @@ const Login = () => {
     const handleFacebookLogin = () => {
         facebookLogin()
             .then(() => {
+                toast.success("Successfully Logged in!");
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                // setLoginError(error);
+                toast.error(error.message.split(': ')[1]);
+            })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(() => {
+                toast.success("Successfully Logged in!");
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
                 toast.error(error.message.split(': ')[1]);
             })
     }
@@ -102,7 +113,7 @@ const Login = () => {
                 <div className="flex gap-4 justify-center items-center text-3xl">
                     <button onClick={handleGoogleLogin} className="text-[#4285f4] hover:text-green-700"><FaGoogle></FaGoogle></button>
                     <button onClick={handleFacebookLogin} className="text-[#0964ff] hover:text-green-700"><FaFacebook></FaFacebook></button>
-                    <button className=""><FaGithub></FaGithub></button>
+                    <button onClick={handleGithubLogin} className="text-[#000000] hover:text-green-700"><FaGithub></FaGithub></button>
                     <button className=""><FaXTwitter></FaXTwitter></button>
                 </div>
             </div>
