@@ -29,7 +29,7 @@ const Contact = () => {
     return (
         <div className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 grid grid-cols-1 gap-8 rounded-2xl md:grid-cols-2 dark:bg-gray-100 dark:text-gray-800">
             <Helmet>
-                <title>Contact ArtisanAxis</title>
+                <title>Contact - ArtisanAxis</title>
             </Helmet>
             <div className="flex flex-col justify-between">
                 <div className="space-y-8">

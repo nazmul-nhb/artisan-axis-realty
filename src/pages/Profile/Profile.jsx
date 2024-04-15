@@ -8,7 +8,7 @@ const Profile = () => {
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 space-y-6 flex flex-col justify-center items-center">
             <Helmet>
-                <title>ArtisanAxis : : {user.displayName}</title>
+                <title>Profile: {user.displayName} - ArtisanAxis</title>
             </Helmet>
             <div className="bg-gradient-to-r from-[#86cfa157] to-[#8d6dd9a3] rounded-lg flex flex-col items-center gap-6 w-[96%] md:w-4/5 lg:w-3/4 mx-auto px-4 lg:px-20 py-6 lg:py-10 shadow-lg shadow-[#3c3939]">
                 <div className="flex flex-col gap-3 items-center my-4">

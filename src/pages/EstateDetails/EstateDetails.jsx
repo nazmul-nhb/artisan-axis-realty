@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PropertyLocation from "../../components/PropertyLocation/PropertyLocation";
 import { Helmet } from 'react-helmet-async';
+import Button from "../../components/Button/Button";
 
 const EstateDetails = () => {
     const [selectedEstate, setSelectedEstate] = useState({});
@@ -20,6 +21,7 @@ const EstateDetails = () => {
         setEstateLoading(false);
     }, [estates, id])
 
+    const { estate_image, estate_title, segment_name, description, price, status, area, facilities, additional_info_1, additional_info_2, location } = selectedEstate;
 
     if (estateLoading) {
         return (
@@ -30,21 +32,73 @@ const EstateDetails = () => {
             </div>
         )
     }
-    const { estate_image, estate_title, segment_name, price, status, area, additional_info_1, additional_info_2,  location } = selectedEstate;
+
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
-            <Helmet>
-                <title>ArtisanAxis : : {estate_title}</title>
-            </Helmet>
-            <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
-                    <Tab>Property Details</Tab>
-                    <Tab>Find on Map</Tab>
-                </TabList>
-                <TabPanel>
-                    <img src={estate_image} alt={estate_title} />
 
+            <Helmet>
+                <title>Details of {estate_title} - ArtisanAxis</title>
+            </Helmet>
+
+            <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+
+                <TabList>
+                    <Tab><h4 className="font-medium">Property Details</h4></Tab>
+                    <Tab><h4 className="font-medium">Find on Map</h4></Tab>
+                </TabList>
+
+                <TabPanel>
+                    <div className="">
+                        <div className="">
+                            <div className="">
+                                <img src={estate_image} alt={estate_title} />
+                                <h5 className="">{status === 'sale' ? 'Sale' : 'Rent'}</h5>
+                                <h3 className="">{price}</h3>
+                            </div>
+                            <div className="">
+                                <h3 className="">{estate_title}</h3>
+                                <h4 className="">{segment_name}</h4>
+                                <div className="">
+                                    <h4 className="">{area}</h4>
+                                    <h4 className="">{location.street}, {location.city}, {location.state}-{location.zip_code}</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="">
+                            <div className="">
+                                <div className="">
+                                    <h3 className="">Facilities:</h3>
+                                    {
+                                        facilities?.map((facility, idx) => <li key={idx} className="pl-4">{facility}</li>)
+                                    }
+                                </div>
+                                <div className="">
+                                    <h3 className="">Special Features:</h3>
+                                    <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
+                                        <h4 className="font-semibold">{additional_info_1.split(': ')[0]}:</h4>
+                                        <h4 className="">{additional_info_1.split(': ')[1]}</h4>
+                                    </div>
+                                    <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
+                                        <h4 className="font-semibold">{additional_info_2.split(': ')[0]}:</h4>
+                                        <h4 className="">{additional_info_2.split(': ')[1]}</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="">
+                                <p className="">{description}</p>
+                            </div>
+                        </div>
+                        
+                        <div className="flex justify-between">
+                            <Button onClick={() => console.log('clicked')} className={'border'} buttonText={'Add to Favorites'} color={'red'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                            
+                            <Button onClick={() => console.log('clicked')} className={'border'} buttonText={'Buy Now'} color={'red'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                        </div>
+                    </div>
                 </TabPanel>
+
                 <TabPanel>
                     <PropertyLocation selectedEstate={selectedEstate}></PropertyLocation>
                 </TabPanel>
