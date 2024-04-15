@@ -9,10 +9,14 @@
         "status": "sale",
         "area": "50,000 sq ft",
         "location": {
-            "street": "123 Main Street",
-            "city": "Metropolis",
-            "state": "State",
-            "zip_code": "12345"
+            "position": [
+                23.9024,
+                90.4056
+            ],
+            "street": "Abul Lane",
+            "city": "Tongi",
+            "state": "Dhaka",
+            "zip_code": "1710"
         },
         "facilities": [
             "Emergency Room",
@@ -32,10 +36,14 @@
         "status": "sale",
         "area": "20 acres",
         "location": {
-            "street": "456 Elm Street",
-            "city": "Suburbia",
-            "state": "State",
-            "zip_code": "54321"
+            "position": [
+                23.7597,
+                90.3897
+            ],
+            "street": "Green Road",
+            "city": "Tejgaon",
+            "state": "Dhaka",
+            "zip_code": "1208"
         },
         "facilities": [
             "Classrooms",
@@ -55,10 +63,14 @@
         "status": "sale",
         "area": "10,000 sq ft",
         "location": {
-            "street": "789 Oak Street",
-            "city": "Village",
-            "state": "State",
-            "zip_code": "67890"
+            "position": [
+                23.9908,
+                90.4226
+            ],
+            "street": "Babul Road",
+            "city": "Gazipur",
+            "state": "Dhaka",
+            "zip_code": "1700"
         },
         "facilities": [
             "Sanctuary",
@@ -78,10 +90,14 @@
         "status": "rent",
         "area": "100,000 sq ft",
         "location": {
-            "street": "1122 Pine Street",
-            "city": "Metroville",
-            "state": "State",
-            "zip_code": "98765"
+            "position": [
+                23.9327,
+                90.3306
+            ],
+            "street": "Mokbul Road",
+            "city": "Ashulia ",
+            "state": "Dhaka",
+            "zip_code": "1349"
         },
         "facilities": [
             "Train Platforms",
@@ -101,10 +117,14 @@
         "status": "rent",
         "area": "200,000 sq ft",
         "location": {
-            "street": "334 Maple Avenue",
-            "city": "Metro",
-            "state": "State",
-            "zip_code": "13579"
+            "position": [
+                23.6231,
+                90.5013
+            ],
+            "street": "Habul Road",
+            "city": "Narayanganj",
+            "state": "Dhaka",
+            "zip_code": "1400"
         },
         "facilities": [
             "Exhibition Halls",
@@ -124,9 +144,13 @@
         "status": "rent",
         "area": "5,000 sq ft",
         "location": {
-            "street": "232 Oak Lane",
-            "city": "Artsville",
-            "state": "State",
+            "position": [
+                24.1654,
+                90.6869
+            ],
+            "street": "Dead Street",
+            "city": "Bhaluka",
+            "state": "Mymensingh",
             "zip_code": "24680"
         },
         "facilities": [
@@ -147,10 +171,14 @@
         "status": "sale",
         "area": "15,000 sq ft",
         "location": {
-            "street": "741 Cedar Avenue",
-            "city": "Cult Town",
-            "state": "State",
-            "zip_code": "86420"
+            "position": [
+                23.7220,
+                90.4711
+            ],
+            "street": "Mirror Road",
+            "city": "Kanchpur",
+            "state": "Dhaka",
+            "zip_code": "1430"
         },
         "facilities": [
             "Prayer Hall",
@@ -170,10 +198,14 @@
         "status": "rent",
         "area": "30,000 sq ft",
         "location": {
-            "street": "555 Elm Street",
-            "city": "Eco City",
-            "state": "State",
-            "zip_code": "24681"
+            "position": [
+                23.6417,
+                90.5949
+            ],
+            "street": "Rooper Road",
+            "city": "Rupganj",
+            "state": "Dhaka",
+            "zip_code": "1460"
         },
         "facilities": [
             "Exhibition Area",
@@ -193,10 +225,14 @@
         "status": "sale",
         "area": "8,000 sq ft",
         "location": {
-            "street": "567 Maple Street",
-            "city": "Artsville",
-            "state": "State",
-            "zip_code": "97531"
+            "position": [
+                23.9605,
+                90.4081
+            ],
+            "street": "Konar Road",
+            "city": "Konabari",
+            "state": "Dhaka",
+            "zip_code": "1341"
         },
         "facilities": [
             "Art Studios",

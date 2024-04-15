@@ -22,7 +22,7 @@ const Register = () => {
         }
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 // toast.warning(errors.password.message);
 
                 // update profile

@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="w-full mx-auto flex flex-col gap-6 p-8 md:px-24 md:py-16 bg-gradient-to-r to-[#16a34a57] from-[#4c00ffa3] lg:mt-24 mt-8">
             <div className="text-center flex flex-col items-center gap-4 mb-4">
                 <img src={logo} alt="ArtisanAxis Logo" className="w-1/3 md:w-1/5" />
-                <h3 className="text-lg md:text-2xl font-bold transition duration-500 hover:text-[#16a34a]"><Link to={'/about'}><span className="text-[#236d3e] hover:text-[#ea580c]"><span className="text-2xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c] hover:text-[#16a34a]"><span className="text-2xl md:text-4xl">&#9074;</span>xis</span> Realty</Link></h3>
+                <h3 className="text-lg md:text-2xl font-bold transition duration-500 hover:text-[#236d3e]"><Link to={'/about'}><span className="text-[#236d3e] hover:text-[#ea580c]"><span className="text-2xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c] hover:text-[#236d3e]"><span className="text-2xl md:text-4xl">&#9074;</span>xis</span> Realty</Link></h3>
                 <p className="w-full lg:w-2/5 mx-auto text-[#12132DB3]">
                 Creating Destinations, Cultivating Community!</p>
             </div>

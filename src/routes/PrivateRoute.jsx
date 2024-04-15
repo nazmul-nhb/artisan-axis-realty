@@ -5,8 +5,8 @@ import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
     const location = useLocation();
-    const { user, loading } = useContext(AuthContext);
-    if (loading) {
+    const { user, userLoading } = useContext(AuthContext);
+    if (userLoading) {
         return (
             <div className="flex items-center justify-center space-x-2">
                 <div className="w-4 h-4 rounded-full animate-pulse dark:bg-teal-600"></div>
