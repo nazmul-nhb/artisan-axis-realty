@@ -27,12 +27,12 @@ const Estate = ({ estate }) => {
                 </div>
             </div>
             <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                <h4 className="font-semibold">{additional_info_1.split(': ')[0]}:</h4>
-                <h4 className="">{additional_info_1.split(': ')[1]}</h4>
+                <h4 className="font-semibold">{additional_info_1?.split(': ')[0]}:</h4>
+                <h4 className="">{additional_info_1?.split(': ')[1]}</h4>
             </div>
             <hr className={`"border-0 border-t bg-white" ${status === 'sale' ? 'border-[#457456]' : 'border-[#8d6a57]'}`} />
             <div className={`flex justify-between items-center ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                <div className="text-xs xl:text-sm flex items-center gap-1"><GrLocation />{location.street}, {location.city}</div>
+                <div className="text-xs xl:text-sm flex items-center gap-1"><GrLocation />{location?.street}, {location?.city}</div>
                 <Link className='' to={`/${id}`}><Button className={'font-bold border text-xs xl:text-sm'} buttonText={'View Property'} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button></Link>
             </div>
         </div>

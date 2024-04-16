@@ -8,19 +8,17 @@ import { useForm } from 'react-hook-form';
 const Contact = () => {
     const { user } = useContext(AuthContext);
     const [showModal, setShowModal] = useState(false);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const handleMessage = (e) => {
-        e.preventDefault();
-
-        const form = e.target;
-
-        if (form.checkValidity()) {
-            setShowModal(true);
-        } else {
-            setShowModal(false);
-        }
-        form.reset();
+    const handleMessage = data => {
+        const { name, email, msg } = data;
+        console.log(name, email, msg);
+        setShowModal(true);
+        reset({
+            name:"",
+            email: "",
+            msg:""
+        })
     }
 
     const closeModal = () => {
@@ -62,17 +60,28 @@ const Contact = () => {
                                 { value: false, message: "You must provide a valid email address." }
                         })}
                         name='email' id="email" type="email" placeholder="Your Email" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500" />
+                    {
+                        errors.email && <p className="text-red-700">{errors.email.message}</p>
+                    }
                 </div>
                 <div>
-                    <label htmlFor='message' className="text-lg">Message</label>
-                    <textarea name='message' required id="message" rows="3" placeholder="Write Your Message to us" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500"></textarea>
+                    <label htmlFor='msg' className="text-lg">Message</label>
+                    <textarea
+                        {...register("msg", {
+                            required:
+                                { value: true, message: "You must write something." }
+                        })}
+                        name='msg' id="msg" rows="3" placeholder="Write Your Message to us" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500"></textarea>
+                    {
+                        errors.msg && <p className="text-red-700">{errors.msg.message}</p>
+                    }
                 </div>
                 <button type="submit" className="w-full flex items-center justify-center tracking-wide uppercase p-3 font-bold rounded-lg bg-teal-600 text-white border border-teal-600 hover:text-teal-600 hover:bg-transparent transition duration-500">Send Message</button>
             </form>
             {
                 showModal && (
                     <dialog open className="w-4/5 md:w-2/5 h-auto bg-white bg-opacity-90 p-8 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg">
-                        <div className="flex flex-col items-center justify-center text-[#235d62]">
+                        <div className="flex flex-col items-center justify-center text-center text-[#235d62]">
                             <div className='h-full flex justify-center items-center'><img className='w-1/2' src={success} alt="Success" /></div>
                             <h3 className="font-bold text-lg">Success!</h3>
                             <p className="py-4">Message Sent. You will be replied soon.</p>

@@ -53,6 +53,14 @@ const UpdateProfile = () => {
                     }
                 </div>
                 <div className="flex flex-col gap-3">
+                    <label htmlFor="email">Your Email</label>
+                    <input
+                        {...register("email", {
+                            value: `${user?.email || ''}`
+                        })}
+                        className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="name" id="name" disabled placeholder="Your Name" />
+                </div>
+                <div className="flex flex-col gap-3">
                     <label htmlFor="photo">Your Photo</label>
                     <input
                         {...register("photo", {
@@ -62,7 +70,7 @@ const UpdateProfile = () => {
                         })}
                         className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
                 </div>
-                <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Update Profile'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Save Changes'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
             </form>
         </section>
     );

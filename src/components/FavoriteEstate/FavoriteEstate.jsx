@@ -3,10 +3,19 @@ import { Link } from "react-router-dom";
 import Button from '../Button/Button';
 import { MdOutlineAreaChart } from "react-icons/md";
 import { GrLocation } from "react-icons/gr";
-import { removeFromLocal } from '../../utilities/local-storage';
 
-const FavoriteEstate = ({ estate }) => {
+const FavoriteEstate = ({ estate, handleDelete, estateLoading }) => {
     const { id, estate_image, estate_title, segment_name, price, status, area, additional_info_1, location } = estate;
+    
+    if (estateLoading) {
+        return (
+            <div className="flex items-center justify-center space-x-2">
+                <div className="w-4 h-4 rounded-full animate-pulse dark:bg-red-600"></div>
+                <div className="w-5 h-5 rounded-full animate-pulse dark:bg-red-600"></div>
+                <div className="w-6 h-6 rounded-full animate-pulse dark:bg-red-600"></div>
+            </div>
+        )
+    }
     return (
         <div className={`flex flex-col gap-3 border p-4 rounded-lg shadow-md ${status === 'sale' ? 'shadow-[#16a34a]' : 'shadow-[#ea580c]'}`}>
             <Link to={`/${id}`}>
@@ -28,21 +37,23 @@ const FavoriteEstate = ({ estate }) => {
                 </div>
             </div>
             <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                <h4 className="font-semibold">{additional_info_1.split(': ')[0]}:</h4>
-                <h4 className="">{additional_info_1.split(': ')[1]}</h4>
+                <h4 className="font-semibold">{additional_info_1?.split(': ')[0]}:</h4>
+                <h4 className="">{additional_info_1?.split(': ')[1]}</h4>
             </div>
             <hr className={`"border-0 border-t bg-white" ${status === 'sale' ? 'border-[#457456]' : 'border-[#8d6a57]'}`} />
             <div className={`flex justify-between items-center ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                <div className="text-xs xl:text-sm flex items-center gap-1"><GrLocation />{location.street}, {location.city}</div>
+                <div className="text-xs xl:text-sm flex items-center gap-1"><GrLocation />{location?.street}, {location?.city}</div>
                 <Link className='' to={`/${id}`}><Button className={'font-bold border text-xs xl:text-sm'} buttonText={'View Property'} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button></Link>
             </div>
-            <Button onClick={() => removeFromLocal(id, 'estates')} className={'font-bold border'} buttonText={'Remove from Favorites'} color={'red'} hoverBgColor={'transparent'} hoverColor={'white'}></Button>
+            <Button onClick={() => handleDelete(id, 'estates')} className={'font-bold border'} buttonText={'Remove from Favorites'} color={'red'} hoverBgColor={'transparent'} hoverColor={'white'}></Button>
         </div>
     );
 };
 
 FavoriteEstate.propTypes = {
     estate: PropTypes.object.isRequired,
+    handleDelete: PropTypes.func.isRequired,
+    estateLoading: PropTypes.bool.isRequired,
 }
 
 export default FavoriteEstate;

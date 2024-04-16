@@ -68,7 +68,7 @@ const EstateDetails = () => {
                                     <h4 className="border rounded-lg px-4 py-2">{segment_name}</h4>
                                     <h4 className="border rounded-lg px-4 py-2">Area: {area}</h4>
                                 </div>
-                                <h4 className="border rounded-lg px-4 py-2 flex gap-2 items-center"><GrLocation />{location.street}, {location.city}, {location.state}-{location.zip_code}</h4>
+                                <h4 className="border rounded-lg px-4 py-2 flex gap-2 items-center"><GrLocation />{location?.street}, {location?.city}, {location?.state}-{location?.zip_code}</h4>
                                 <div className="flex-grow mt-4">
                                     <h3 className="text-xl font-medium">Facilities:</h3>
                                     {
@@ -78,12 +78,12 @@ const EstateDetails = () => {
                                 <div className="border px-4 py-2">
                                     <h3 className="text-xl font-medium">Special Features:</h3>
                                     <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                                        <h4 className="font-semibold">{additional_info_1.split(': ')[0]}:</h4>
-                                        <h4 className="">{additional_info_1.split(': ')[1]}</h4>
+                                        <h4 className="font-semibold">{additional_info_1?.split(': ')[0]}:</h4>
+                                        <h4 className="">{additional_info_1?.split(': ')[1]}</h4>
                                     </div>
                                     <div className={`flex-grow flex gap-2 text-sm lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
-                                        <h4 className="font-semibold">{additional_info_2.split(': ')[0]}:</h4>
-                                        <h4 className="">{additional_info_2.split(': ')[1]}</h4>
+                                        <h4 className="font-semibold">{additional_info_2?.split(': ')[0]}:</h4>
+                                        <h4 className="">{additional_info_2?.split(': ')[1]}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ const EstateDetails = () => {
                         {
                             showModal && (
                                 <dialog open className="w-4/5 md:w-2/5 h-auto bg-white bg-opacity-95 p-8 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg">
-                                    <div className="flex flex-col items-center justify-center text-[#235d62]">
+                                    <div className="flex flex-col items-center justify-center text-center text-[#235d62]">
                                         <div className='h-full flex justify-center items-center'><img className='w-1/2' src={success} alt="Success" /></div>
                                         <h3 className="font-bold text-lg">Thank You for Your Interest!</h3>
                                         <p className="py-4">One of Our Agents will Contact You Soon!</p>
