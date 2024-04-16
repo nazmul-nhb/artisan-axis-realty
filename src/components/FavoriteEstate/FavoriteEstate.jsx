@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from '../Button/Button';
 import { MdOutlineAreaChart } from "react-icons/md";
 import { GrLocation } from "react-icons/gr";
+import { Helmet } from 'react-helmet-async';
 
 const FavoriteEstate = ({ estate, handleDelete, estateLoading }) => {
     const { id, estate_image, estate_title, segment_name, price, status, area, additional_info_1, location } = estate;
@@ -18,6 +19,9 @@ const FavoriteEstate = ({ estate, handleDelete, estateLoading }) => {
     }
     return (
         <div className={`flex flex-col gap-3 border p-4 rounded-lg shadow-md ${status === 'sale' ? 'shadow-[#16a34a]' : 'shadow-[#ea580c]'}`}>
+            <Helmet>
+                <title>Favorite Estates - ArtisanAxis</title>
+            </Helmet>
                 <figure className='w-full'>
                     <img className='hover:scale-105 transition-all duration-500 rounded-lg' src={estate_image} alt={estate_title} />
                 </figure>

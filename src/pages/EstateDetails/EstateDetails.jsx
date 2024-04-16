@@ -58,19 +58,21 @@ const EstateDetails = () => {
                 <TabPanel>
                     <div className="space-y-8 px-3 py-2 border rounded-lg">
                         <div className="flex flex-col lg:flex-row gap-6">
-                            <div className="w-full lg:w-3/5 relative">
-                                <img className="rounded-lg" src={estate_image} alt={estate_title} />
-                                <h5 className={`bg-opacity-80 absolute top-2 right-0 px-4 text-lg md:text-2xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea5d0c]'}`}>{status === 'sale' ? 'Sale' : 'Rent'}</h5>
-                                <h3 className={`bg-opacity-80 absolute bottom-2 right-0 px-4 text-xl md:text-3xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea580c]'}`}>{price}</h3>
+                            <div className="w-full lg:w-3/5">
+                                <div className="relative">
+                                    <img className="rounded-lg" src={estate_image} alt={estate_title} />
+                                    <h5 className={`bg-opacity-80 absolute top-2 right-0 px-4 text-lg md:text-2xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea5d0c]'}`}>{status === 'sale' ? 'Sale' : 'Rent'}</h5>
+                                    <h3 className={`bg-opacity-80 absolute bottom-2 right-0 px-4 text-xl md:text-3xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea580c]'}`}>{price}</h3>
+                                </div>
                             </div>
                             <div className="w-full lg:w-2/5 flex flex-col gap-2">
-                                <h3 className={`text-lg md:text-2xl xl:text-3xl font-bold ${status === 'sale' ? 'text-[#16a343]' : 'text-[#ea3c0c]'}`}>{estate_title}</h3>
+                                <h3 className={`text-lg md:text-2xl xl:text-3xl font-bold mb-3 ${status === 'sale' ? 'text-[#16a343]' : 'text-[#ea3c0c]'}`}>{estate_title}</h3>
                                 <div className="flex flex-row justify-between">
                                     <h4 className={`text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>{segment_name}</h4>
-                                    <h4 className={`flex items-center gap-1 text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><MdOutlineAreaChart/> {area}</h4>
+                                    <h4 className={`flex items-center gap-1 text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><MdOutlineAreaChart /> {area}</h4>
                                 </div>
                                 <h4 className={`text-xs md:text-base border rounded-lg px-4 py-2 flex gap-2 items-center ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><GrLocation />{location?.street}, {location?.city}, {location?.state}-{location?.zip_code}</h4>
-                                <div className={`flex-grow mt-4 border px-4 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
+                                <div className={`flex-grow mt-3 border px-4 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
                                     <h3 className="md:text-xl font-medium">Facilities:</h3>
                                     {
                                         facilities?.map((facility, idx) => <li key={idx} className="text-sm md:text-base pl-4">{facility}</li>)
@@ -93,10 +95,10 @@ const EstateDetails = () => {
                             <p className="w-full lg:w-3/5 text-justify text-sm md:text-base"><span className={`font-semibold ${status === 'sale' ? 'text-[#16a34a]' : 'text-[#ea580c]'}`}>Description:</span> {description}</p>
                             <div className="w-full lg:w-2/5 flex justify-between items-center">
                                 <div>
-                                    <Button onClick={() => saveToLocal(selectedEstate.id, 'estates')} className={'border'} buttonText={'Add to Favorites'} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                                    <Button onClick={() => saveToLocal(selectedEstate.id, 'estates')} className={'border font-semibold'} buttonText={'Add to Favorites'} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
                                 </div>
                                 <div>
-                                    <Button onClick={() => { setShowModal(true); removeFromLocal(selectedEstate.id, 'estates') }} className={'border'} buttonText={`${status === 'sale' ? 'Buy Now' : 'Rent Now'}`} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                                    <Button onClick={() => { setShowModal(true); removeFromLocal(selectedEstate.id, 'estates') }} className={'border font-semibold'} buttonText={`${status === 'sale' ? 'Buy Now' : 'Rent Now'}`} color={`${status === 'sale' ? '#16a34a' : '#ea580c'}`} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
                                 </div>
                             </div>
                         </div>

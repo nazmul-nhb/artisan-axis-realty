@@ -39,7 +39,7 @@ const Slider = () => {
     }
 
     return (
-        <div className="my-2 md:my-8 w-full lg:w-2/3 xl:w-1/2 flex items-center justify-center">
+        <div className="my-2 md:my-8 w-full lg:w-4/5 xl:w-1/2 flex items-center justify-center">
             <Swiper
                 style={{
                     '--swiper-navigation-color': 'orange',

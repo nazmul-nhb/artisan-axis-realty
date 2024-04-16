@@ -36,9 +36,9 @@ const UpdateProfile = () => {
             <form onSubmit={handleSubmit(handleUpdate)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-6 lg:py-10 bg-gradient-to-r from-[#86cfa157] to-[#8d6dd9a3] shadow-lg shadow-[#3c3939] rounded-lg">
                 <div className="flex flex-col gap-3 items-center my-4">
                     <img className="rounded-full border-2 p-1 border-green-900 w-24 md:w-32 h-24 md:h-32" src={user.photoURL} alt={user.displayName} title={user.displayName} />
-                    <h4 className="text-2xl md:text-3xl font-bold">{user.displayName}</h4>
+                    <h4 className="text-xl md:text-3xl font-bold">{user.displayName}</h4>
                 </div>
-                <h2 className="text-lg md:text-2xl font-medium text-center">Update Your Profile</h2>
+                <h2 className="text-lg md:text-2xl font-semibold text-center">Update Your Profile</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="name">Your Name</label>
                     <input
