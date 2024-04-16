@@ -13,11 +13,14 @@ import { getStoredItems } from "../../utilities/local-storage";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [favCount, setFavCount] = useState(0);
+    // const [countLoading, setCountLoading] = useState(true);
     const { user, logOut } = useContext(AuthContext);
 
     useEffect(() => {
+        // setCountLoading(true);
         const favItems = getStoredItems('estates');
         setFavCount(favItems.length);
+        // setCountLoading(false);
     }, [favCount])
 
     const navLinks = <>
@@ -25,7 +28,7 @@ const Navbar = () => {
         {
             user
                 ? <><li><NavLink to={'/update-profile'}>Update Profile</NavLink></li>
-                    <li><NavLink to={'/favorites'}>Favorites <sup>{favCount}</sup></NavLink></li>
+                    <li><NavLink to={'/favorites'}>Favorites <sup>{favCount === 0 ? "" : favCount}</sup></NavLink></li>
                 </>
                 : <>
                     {/* <li><NavLink to={'/login'}>Login</NavLink></li>
