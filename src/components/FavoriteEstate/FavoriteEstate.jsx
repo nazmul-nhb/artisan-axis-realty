@@ -18,11 +18,9 @@ const FavoriteEstate = ({ estate, handleDelete, estateLoading }) => {
     }
     return (
         <div className={`flex flex-col gap-3 border p-4 rounded-lg shadow-md ${status === 'sale' ? 'shadow-[#16a34a]' : 'shadow-[#ea580c]'}`}>
-            <Link to={`/${id}`}>
                 <figure className='w-full'>
                     <img className='hover:scale-105 transition-all duration-500 rounded-lg' src={estate_image} alt={estate_title} />
                 </figure>
-            </Link>
             <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-1">
                     <h4 className={`${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'} text-xs xl:text-sm`}>{segment_name}</h4>
