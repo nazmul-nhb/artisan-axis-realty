@@ -68,21 +68,21 @@ const Home = () => {
             <div className="my-8 md:my-16 flex flex-col gap-3 md:gap-6 justify-center items-center pr-4 text-center mx-auto">
                 <h3 className="mt-8 md:mt-16 text-xl md:text-5xl font-bold md:leading-snug">Our Services & Benefits</h3>
                 <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
+                    <div data-aos="flip-left" data-aos-duration="1000" className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
                         <img src={safety} alt="Insurance" className="w-24" />
                         <h3 className="text-lg font-semibold">Property Insurance</h3>
                         <p className="ext-base">
                             Safeguard your investment with our comprehensive property insurance services, providing peace of mind against unforeseen damages or liabilities, ensuring your property remains protected.
                         </p>
                     </div>
-                    <div className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
+                    <div data-aos="flip-left" data-aos-delay="1000" data-aos-duration="1000" className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
                         <img src={money} alt="Benefits" className="w-20" />
                         <h3 className="text-lg font-semibold">Benefits</h3>
                         <p className="text-base">
                             Whether you&rsquo;re a first-time buyer, seasoned investor, or property owner, discover the myriad benefits of working with a trusted real estate partner dedicated to your success, from maximizing property value to achieving your long-term financial goals.
                         </p>
                     </div>
-                    <div className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
+                    <div data-aos="flip-left" data-aos-delay="2000" data-aos-duration="1000" className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
                         <img src={commission} alt="Tax" className="w-20" />
                         <h3 className="text-lg font-semibold">Less Tax & Commission</h3>
                         <p className="ext-base">
