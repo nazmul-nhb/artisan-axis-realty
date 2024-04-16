@@ -43,7 +43,7 @@ const UpdateProfile = () => {
                     <label htmlFor="name">Your Name</label>
                     <input
                         {...register("name", {
-                            value: `${user?.displayName}`,
+                            value: `${user?.displayName || ''}`,
                             required:
                                 { value: true, message: "You must provide your name." }
                         })}
@@ -56,7 +56,7 @@ const UpdateProfile = () => {
                     <label htmlFor="photo">Your Photo</label>
                     <input
                         {...register("photo", {
-                            value: `${user?.photoURL}`,
+                            value: `${user?.photoURL || ''}`,
                             required:
                                 { value: false, message: "You must provide a valid photo URL." }
                         })}

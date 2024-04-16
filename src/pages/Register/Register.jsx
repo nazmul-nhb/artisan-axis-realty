@@ -71,7 +71,7 @@ const Register = () => {
                     <input
                         {...register("photo", {
                             required:
-                                { value: false, message: "You must provide a valid photo URL." }
+                                { value: true, message: "You must provide a valid photo URL." }
                         })}
                         className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
                 </div>

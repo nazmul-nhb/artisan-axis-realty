@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import contactDoodle from '../../assets/contact.png';
 import success from '../../assets/success.png';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../providers/AuthProvider';
+import { useForm } from 'react-hook-form';
 
 const Contact = () => {
-
+    const { user } = useContext(AuthContext);
     const [showModal, setShowModal] = useState(false);
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleSubmit = (e) => {
+    const handleMessage = (e) => {
         e.preventDefault();
 
         const form = e.target;
@@ -15,11 +18,9 @@ const Contact = () => {
         if (form.checkValidity()) {
             setShowModal(true);
         } else {
-            setShowModal(false)
+            setShowModal(false);
         }
-        e.target.name.value = '';
-        e.target.email.value = '';
-        e.target.message.value = '';
+        form.reset();
     }
 
     const closeModal = () => {
@@ -38,30 +39,45 @@ const Contact = () => {
                 </div>
                 <img src={contactDoodle} alt="Contact Us" className="w-full md:w-4/5 px-6" />
             </div>
-            <form onSubmit={handleSubmit} className="text-[#2b7178] gap-6 flex flex-col justify-between">
+            <form onSubmit={handleSubmit(handleMessage)} className="text-[#2b7178] gap-6 flex flex-col justify-between">
                 <div>
-                    <label className="text-lg">Full name</label>
-                    <input name='name' required id="name" type="text" placeholder="Your Full Name" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500" />
+                    <label htmlFor='name' className="text-lg">Full name</label>
+                    <input
+                        {...register("name", {
+                            value: `${user?.displayName || ''}`,
+                            required:
+                                { value: true, message: "You must provide your name." }
+                        })}
+                        name='name' id="name" type="text" placeholder="Your Full Name" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500" />
+                    {
+                        errors.name && <p className="text-red-700">{errors.name.message}</p>
+                    }
                 </div>
                 <div>
-                    <label className="text-lg">Email</label>
-                    <input name='email' required id="email" type="email" placeholder="Your Email" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500" />
+                    <label htmlFor='email' className="text-lg">Email</label>
+                    <input
+                        {...register("email", {
+                            value: `${user?.email || ''}`,
+                            required:
+                                { value: false, message: "You must provide a valid email address." }
+                        })}
+                        name='email' id="email" type="email" placeholder="Your Email" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500" />
                 </div>
                 <div>
-                    <label className="text-lg">Message</label>
+                    <label htmlFor='message' className="text-lg">Message</label>
                     <textarea name='message' required id="message" rows="3" placeholder="Write Your Message to us" className="border border-[#59C6D2] rounded-lg focus:outline-0 w-full p-3 bg-[#328eff0c] focus:bg-[#328EFF26] transition duration-500"></textarea>
                 </div>
                 <button type="submit" className="w-full flex items-center justify-center tracking-wide uppercase p-3 font-bold rounded-lg bg-teal-600 text-white border border-teal-600 hover:text-teal-600 hover:bg-transparent transition duration-500">Send Message</button>
             </form>
             {
                 showModal && (
-                    <dialog open className="modal">
-                        <div className="modal-box flex flex-col items-center justify-center text-[#2b7178]">
+                    <dialog open className="w-4/5 md:w-2/5 h-auto bg-white bg-opacity-90 p-8 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg">
+                        <div className="flex flex-col items-center justify-center text-[#235d62]">
                             <div className='h-full flex justify-center items-center'><img className='w-1/2' src={success} alt="Success" /></div>
                             <h3 className="font-bold text-lg">Success!</h3>
-                            <p className="py-4">Message Sent</p>
-                            <div className="modal-action">
-                                <button className="p-3 font-bold rounded-lg bg-teal-600 text-white border border-teal-600 hover:text-teal-600 hover:bg-transparent transition duration-500" onClick={closeModal}>Close</button>
+                            <p className="py-4">Message Sent. You will be replied soon.</p>
+                            <div className="">
+                                <button className="px-3 py-2 font-bold rounded-lg bg-[#235d62] text-white border border-[#235d62] hover:text-[#235d62] hover:bg-transparent transition duration-500" onClick={closeModal}>Okay</button>
                             </div>
                         </div>
                     </dialog>
