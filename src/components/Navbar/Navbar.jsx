@@ -1,25 +1,31 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Button from "../Button/Button";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import defaultPP from '../../assets/user.png';
 import { MdMenuOpen, MdOutlineClose } from "react-icons/md";
 import logo from '../../assets/aa-logo-home.png';
 import { FiLogOut } from "react-icons/fi";
 import { toast } from "react-toastify";
+import { getStoredItems } from "../../utilities/local-storage";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-
+    const [favCount, setFavCount] = useState(0);
     const { user, logOut } = useContext(AuthContext);
+
+    useEffect(() => {
+        const favItems = getStoredItems('estates');
+        setFavCount(favItems.length);
+    }, [favCount])
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         {
             user
                 ? <><li><NavLink to={'/update-profile'}>Update Profile</NavLink></li>
-                    {/* <li><NavLink to={'/profile'}>My Profile</NavLink></li> */}
+                    <li><NavLink to={'/favorites'}>Favorites <sup>{favCount}</sup></NavLink></li>
                 </>
                 : <>
                     {/* <li><NavLink to={'/login'}>Login</NavLink></li>

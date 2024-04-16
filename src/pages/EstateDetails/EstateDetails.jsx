@@ -30,10 +30,6 @@ const EstateDetails = () => {
         setShowModal(false);
     };
 
-    const addToFavorites = () => {
-        saveToLocal(selectedEstate.id, 'estates');
-    }
-
     if (estateLoading) {
         return (
             <div className="flex items-center justify-center space-x-2">
@@ -96,10 +92,10 @@ const EstateDetails = () => {
                             <p className="w-full lg:w-3/5"><span className="font-semibold">Description:</span> {description}</p>
                             <div className="w-full lg:w-2/5 flex justify-between items-center">
                                 <div>
-                                    <Button onClick={addToFavorites} className={'border'} buttonText={'Add to Favorites'} color={'red'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                                    <Button onClick={() => saveToLocal(selectedEstate.id, 'estates')} className={'border'} buttonText={'Add to Favorites'} color={'red'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
                                 </div>
                                 <div>
-                                    <Button onClick={() => {setShowModal(true); removeFromLocal(selectedEstate.id, 'estates')}} className={'border'} buttonText={'Buy Now'} color={'red'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
+                                    <Button onClick={() => { setShowModal(true); removeFromLocal(selectedEstate.id, 'estates') }} className={'border'} buttonText={'Buy Now'} color={'red'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
                                 </div>
                             </div>
                         </div>

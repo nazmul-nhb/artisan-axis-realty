@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Contact/Contact";
+import Favorites from "../pages/Favorites/Favorites";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ export const router = createBrowserRouter([
             {
                 path: '/:id',
                 element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>,
+                loader: (() => fetch('./estate-data.json'))
+            },
+            {
+                path: '/favorites',
+                element: <PrivateRoute><Favorites></Favorites></PrivateRoute>,
                 loader: (() => fetch('./estate-data.json'))
             },
             {
