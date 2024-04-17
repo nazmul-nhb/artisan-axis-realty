@@ -66,7 +66,7 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <div className="text-sm xl:text-base">
-                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-2 font-medium duration-500 absolute lg:static shadow-md shadow-slate-700 lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-16 md:top-20 bg-white bg-opacity-95 flex z-10' : '-left-96 top-16 md:top-20'}`}>
+                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-2 font-medium duration-500 absolute lg:static shadow-md shadow-slate-700 lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-16 md:top-20 bg-white bg-opacity-95 flex z-10' : '-left-full top-16 md:top-20'}`}>
                         {navLinks}
                     </ul>
                 </div>
