@@ -52,7 +52,12 @@ const Register = () => {
             <Helmet>
                 <title>Register - ArtisanAxis</title>
             </Helmet>
-            <form onSubmit={handleSubmit(handleRegister)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
+            <form
+                data-aos="zoom-out-up"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+                 onSubmit={handleSubmit(handleRegister)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
                 <h2 className="text-lg md:text-2xl font-medium">Please, Register</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="name">Your Name</label>
@@ -140,10 +145,10 @@ const Register = () => {
                     </div> */}
                 <div className="flex gap-2">
                     <input type="checkbox" name="terms" id="terms" />
-                    <label htmlFor="terms">Accept Our <Link>Terms & Conditions</Link></label>
+                    <label htmlFor="terms">Accept Our <Link className="text-red-700 hover:text-blue-800">Terms & Conditions</Link></label>
                 </div>
                 <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Register'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
-                <p className="text-center text-sm md:text-base font-medium">Already have an Account? Please, <Link className="text-red-700" to={'/login'}>Login Here!</Link></p>
+                <p className="text-center text-sm md:text-base font-medium">Already have an Account? Please, <Link className="text-red-700 hover:text-blue-800" to={'/login'}>Login Here!</Link></p>
             </form>
         </section>
     );

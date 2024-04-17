@@ -24,19 +24,19 @@ const Navbar = () => {
     }, [favCount])
 
     const navLinks = <>
-        <li><NavLink to={'/'}>Home</NavLink></li>
+        <NavLink to={'/'}>Home</NavLink>
         {
             user
-                ? <><li><NavLink to={'/update-profile'}>Update Profile</NavLink></li>
-                    <li><NavLink to={'/favorites'}>Favorites <sup>{favCount === 0 ? "" : favCount}</sup></NavLink></li>
+                ? <><NavLink to={'/update-profile'}>Update Profile</NavLink>
+                    <NavLink to={'/favorites'}>Favorites <sup>{favCount === 0 ? "" : favCount}</sup></NavLink>
                 </>
                 : <>
-                    {/* <li><NavLink to={'/login'}>Login</NavLink></li>
-                    <li><NavLink to={'/register'}>Register</NavLink></li> */}
+                    {/* <NavLink to={'/login'}>Login</NavLink>
+                    <NavLink to={'/register'}>Register</NavLink> */}
                 </>
         }
-        <li><NavLink to={'/contact'}>Contact</NavLink></li>
-        <li><NavLink to={'/about'}>About</NavLink></li>
+        <NavLink to={'/contact'}>Contact</NavLink>
+        <NavLink to={'/about'}>About</NavLink>
     </>
 
     const handleLogout = () => {
@@ -66,7 +66,7 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <div className="text-sm xl:text-base">
-                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-4 font-medium duration-500 absolute lg:static shadow-md shadow-slate-700 lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-16 md:top-20 bg-white bg-opacity-95 flex z-10' : '-left-96 top-16 md:top-20'}`}>
+                    <ul className={`w-1/2 lg:w-full flex flex-col lg:flex-row justify-start lg:justify-center gap-2 font-medium duration-500 absolute lg:static shadow-md shadow-slate-700 lg:shadow-none h-screen lg:h-auto p-4 lg:p-0 ${open ? 'left-0 top-16 md:top-20 bg-white bg-opacity-95 flex z-10' : '-left-96 top-16 md:top-20'}`}>
                         {navLinks}
                     </ul>
                 </div>

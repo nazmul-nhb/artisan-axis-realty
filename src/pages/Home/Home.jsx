@@ -38,7 +38,12 @@ const Home = () => {
             <div className="my-2 md:my-4 flex flex-col-reverse xl:flex-row items-center justify-between px-2 md:px-8 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#0b1d1157] to-[#4c00ffa3]">
 
                 {/* Banner */}
-                <div className="flex flex-col gap-6 justify-center items-center pr-4 text-center xl:text-left">
+                <div
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="1000"
+                    className="flex flex-col gap-6 justify-center items-center pr-4 text-center xl:text-left">
                     <h3 className="text-2xl md:text-5xl font-bold text-white md:leading-snug">Discover the Art of Specialty Real Estate with ArtisanAxis</h3>
                     <p className="text-white text-base md:text-lg">Step into a world where innovation meets elegance, where ArtisanAxis Realty&rsquo;s dedication to detail transforms spaces into havens of inspiration, tailored to reflect your unique style and aspirations.</p>
                 </div>
@@ -49,7 +54,7 @@ const Home = () => {
 
             {/* Find Property */}
             <div className="my-8 md:my-16 flex flex-col gap-3 md:gap-6 justify-center items-center pr-4 text-center mx-auto">
-                <h3 className="text-xl md:text-5xl font-bold md:leading-snug"><span className="text-[#16a34a]"><span>&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span>&#9074;</span>xis</span> Realty
+                <h3 className="text-xl md:text-5xl font-bold md:leading-snug"><span className="text-[#16a34a]"><span className="text-2xl md:text-6xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-2xl md:text-6xl">&#9074;</span>xis</span> Realty
                     <br />
                     Find Property for Yor Community</h3>
                 <p className="w-[88%] md:w-3/5 text-[#898585] text-base md:text-xl">Every property is a masterpiece, meticulously crafted to blend artistry with architectural brilliance.
@@ -67,6 +72,9 @@ const Home = () => {
             {/* Services & Benefits*/}
             <div className="my-8 md:my-16 flex flex-col gap-3 md:gap-6 justify-center items-center pr-4 text-center mx-auto">
                 <h3 className="mt-8 md:mt-16 text-xl md:text-5xl font-bold md:leading-snug">Our Services & Benefits</h3>
+                <p className="w-[88%] md:w-3/5 text-[#898585] text-base md:text-xl">
+                    Experience the unparalleled benefits of partnering with us for your real estate needs, where personalized attention, industry expertise, and a commitment to excellence define every interaction.
+                </p>
                 <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div data-aos="flip-left" data-aos-duration="1000" className="text-center flex flex-col justify-start gap-4 items-center border rounded-lg border-gray-600 px-4 py-3 bg-gray-100">
                         <img src={safety} alt="Insurance" className="w-24" />

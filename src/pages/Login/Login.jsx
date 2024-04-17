@@ -79,11 +79,16 @@ const Login = () => {
     }
 
     return (
-        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col justify-center items-center">
+        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col lg:flex-row justify-around items-center">
             <Helmet>
                 <title>Login - ArtisanAxis</title>
             </Helmet>
-            <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
+            <form
+                data-aos="zoom-out-up"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+                onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
                 <h2 className="text-2xl font-medium">Please, Login</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="email">Your Email</label>
@@ -115,21 +120,54 @@ const Login = () => {
                 {/* {
                     loginError ? <p className="text-red-700">{loginError}</p> : null
                 } */}
-                <div className="flex gap-2">
+                {/* <div className="flex gap-2">
                     <h3>Forgot Password? <button className="text-red-700">Click Here</button></h3>
-                </div>
+                </div> */}
                 <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Login'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
-                <p className="text-center text-sm md:text-base font-medium">New to this site? Please, <Link className="text-red-700" to={'/register'}>Register Here!</Link></p>
+                <p className="text-center text-sm md:text-base font-medium">New to this site? Please, <Link className="text-red-700 hover:text-blue-800" to={'/register'}>Register Here!</Link></p>
             </form>
             {/* Social Login */}
-            <div className="flex flex-col gap-2">
+            <div
+                data-aos="zoom-out-down"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+                className="flex flex-col gap-2">
                 <h3 className="text-center">Or</h3>
-                <h3 className="text-center">Login Using Social Media</h3>
+                <h3
+                    data-aos="fade-top"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="1000"
+                    className="text-center text-xl font-semibold">Login Using Social Media</h3>
                 <div className="flex gap-4 justify-center items-center text-3xl">
-                    <button onClick={handleGoogleLogin} className="text-[#4285f4] hover:text-green-700"><FaGoogle></FaGoogle></button>
-                    <button onClick={handleFacebookLogin} className="text-[#0964ff] hover:text-green-700"><FaFacebook></FaFacebook></button>
-                    <button onClick={handleGithubLogin} className="text-[#000000] hover:text-green-700"><FaGithub></FaGithub></button>
-                    <button onClick={handleTwitterLogin} className="text-[#000000] hover:text-green-700"><FaXTwitter></FaXTwitter></button>
+                    <button
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-duration="1000"
+                        onClick={handleGoogleLogin} className="text-[#4285f4] hover:text-green-700"><FaGoogle></FaGoogle></button>
+                    <button
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-duration="1000"
+                        data-aos-delay="1000"
+                        onClick={handleFacebookLogin} className="text-[#0964ff] hover:text-green-700"><FaFacebook></FaFacebook></button>
+                    <button
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-duration="1000"
+                        data-aos-delay="1500"
+                        onClick={handleGithubLogin} className="text-[#000000] hover:text-green-700"><FaGithub></FaGithub></button>
+                    <button
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-duration="1000"
+                        data-aos-delay="2000"
+                        onClick={handleTwitterLogin} className="text-[#000000] hover:text-green-700"><FaXTwitter></FaXTwitter></button>
                 </div>
             </div>
         </section>

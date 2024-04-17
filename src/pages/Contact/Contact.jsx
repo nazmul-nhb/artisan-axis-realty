@@ -15,9 +15,9 @@ const Contact = () => {
         console.log(name, email, msg);
         setShowModal(true);
         reset({
-            name:"",
+            name: "",
             email: "",
-            msg:""
+            msg: ""
         })
     }
 
@@ -26,18 +26,28 @@ const Contact = () => {
     };
 
     return (
-        <div className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 grid grid-cols-1 gap-8 rounded-2xl md:grid-cols-2 dark:bg-gray-100 dark:text-gray-800">
+        <div className="mx-2 md:mx-8 my-2 md:my-8 p-8 grid grid-cols-1 gap-8 rounded-2xl md:grid-cols-2 dark:bg-gray-100 dark:text-gray-800 shadow-lg shadow-[#2b7178]">
             <Helmet>
                 <title>Contact - ArtisanAxis</title>
             </Helmet>
-            <div className="flex flex-col justify-between">
+            <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+                className="flex flex-col justify-between">
                 <div className="space-y-8">
                     <h2 className="text-2xl md:text-4xl font-bold leading-tight lg:text-5xl">Let&rsquo;s talk!</h2>
                     <div className="dark:text-gray-600 text-justify md:pr-12">Thank you for your interest in reaching out to us! Whether you have a question, suggestion, or just want to say &ldquo;hello&rdquo;, we&rsquo;re here to listen. Please, feel free to use the form to get in touch with our team. We&rsquo;ll do our best to respond to you as soon as possible.</div>
                 </div>
                 <img src={contactDoodle} alt="Contact Us" className="w-full md:w-4/5 px-6" />
             </div>
-            <form onSubmit={handleSubmit(handleMessage)} className="text-[#2b7178] gap-6 flex flex-col justify-between">
+            <form
+                data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+                onSubmit={handleSubmit(handleMessage)} className="text-[#2b7178] gap-6 flex flex-col justify-between">
                 <div>
                     <label htmlFor='name' className="text-lg">Full name</label>
                     <input

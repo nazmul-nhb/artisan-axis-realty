@@ -10,6 +10,7 @@ import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import Favorites from "../pages/Favorites/Favorites";
+import About from "../pages/About/About";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/about',
+                element: <About></About>
             },
             {
                 path: '/:id',
