@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import safety from '../../assets/safety.png';
 import money from '../../assets/money.png';
 import commission from '../../assets/commision.png';
+import Reviews from "../../components/Reviews/Reviews";
 
 const Home = () => {
     // const { estates, estateLoading } = useContext(EstateContext);
@@ -99,6 +100,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Reviews></Reviews>
         </section>
     );
 };

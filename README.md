@@ -35,3 +35,4 @@
 - If you click on the profile picture on the navbar it will take you to you profile page. You can see your information there, i.e. your name, email, whether your email is verified or not, last log in time and account creation date.
 - On navbar beside your profile picture, you can see a logout icon. You can simply logout by clicking this icon
 - **Update Profile**, **Favorites**, **Estate Details** and **User Profile (Profile Picture on Navbar)** - these are protected routes, meaning you cannot access these pages without logging in.
+- You will notice animation effects on most of the pages of the site
