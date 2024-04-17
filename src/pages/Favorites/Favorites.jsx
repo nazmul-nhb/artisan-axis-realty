@@ -23,8 +23,13 @@ const Favorites = () => {
     const handleDelete = (id, key) => {
         setEstateLoading(true);
         removeFromLocal(id, key);
-        const localEstates = getStoredItems(key);
-        setFavEstates(localEstates);
+        const newLocalEstates = getStoredItems(key);
+        let remainingEstates = [];
+        for (const id of newLocalEstates) {
+            const remainingEstate = estates.find(estate => estate.id === id);
+            remainingEstates.push(remainingEstate);
+        }
+        setFavEstates(remainingEstates);
         setEstateLoading(false);
     }
 
