@@ -17,7 +17,6 @@ const Login = () => {
     const { userLogin, googleLogin, facebookLogin, githubLogin, twitterLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    // const [loginError, setLoginError] = useState(null);
 
     const handleLogin = data => {
         const { email, password } = data;
@@ -27,7 +26,6 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                // setLoginError(error);
                 if (error.message.split(': ')[1] === "Error (auth/invalid-login-credentials).") {
                     toast.error("Email & Password Did Not Match");
                 }
@@ -117,9 +115,7 @@ const Login = () => {
                         <span className="absolute top-1/2 right-2 -translate-y-1/2" onClick={() => setShowPassword(!showPassword)} >{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                     </div>
                 </div>
-                {/* {
-                    loginError ? <p className="text-red-700">{loginError}</p> : null
-                } */}
+
                 {/* <div className="flex gap-2">
                     <h3>Forgot Password? <button className="text-red-700">Click Here</button></h3>
                 </div> */}

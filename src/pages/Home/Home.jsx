@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { EstateContext } from "../../providers/EstateProvider";
 import Estate from "../../components/Estate/Estate";
 import Slider from "../../components/Slider/Slider";
 import { Helmet } from 'react-helmet-async';
@@ -9,7 +8,6 @@ import commission from '../../assets/commision.png';
 import Reviews from "../../components/Reviews/Reviews";
 
 const Home = () => {
-    // const { estates, estateLoading } = useContext(EstateContext);
     const [estates, setEstates] = useState([]);
     const [estateLoading, setEstateLoading] = useState(true);
 
@@ -36,15 +34,15 @@ const Home = () => {
             <Helmet>
                 <title>ArtisanAxis Realty</title>
             </Helmet>
-            <div className="my-2 md:my-4 flex flex-col-reverse xl:flex-row items-center justify-between px-2 md:px-8 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#0b1d1157] to-[#4c00ffa3]">
+            <div
+                data-aos="flip-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="4000"
+                className="my-2 md:my-4 flex flex-col-reverse xl:flex-row items-center justify-between px-2 md:px-8 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#0b1d1157] to-[#4c00ffa3]">
 
                 {/* Banner */}
-                <div
-                    data-aos="fade-right"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-sine"
-                    data-aos-duration="1000"
-                    className="flex flex-col gap-6 justify-center items-center pr-4 text-center xl:text-left">
+                <div className="flex flex-col gap-6 justify-center items-center pr-4 text-center xl:text-left">
                     <h3 className="text-2xl md:text-5xl font-bold text-white md:leading-snug">Discover the Art of Specialty Real Estate with ArtisanAxis</h3>
                     <p className="text-white text-base md:text-lg">Step into a world where innovation meets elegance, where ArtisanAxis Realty&rsquo;s dedication to detail transforms spaces into havens of inspiration, tailored to reflect your unique style and aspirations.</p>
                 </div>
