@@ -9,9 +9,10 @@
 
 # Other NPM Packages Used in the Project:
 - react-helmet-async
-- react-tabs
-- react-toastify
 - react-icons
+- react-toastify
+- react-tabs
+- react-fast-marquee
 
 # Notable Features of the Website:
 - You can see **Buy Now/Rent Now** buttons on banner images on sliders based on if you can buy or rent them

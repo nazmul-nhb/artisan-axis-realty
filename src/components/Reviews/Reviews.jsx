@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Review from "../Review/Review";
+import Marquee from "react-fast-marquee";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
@@ -23,13 +24,15 @@ const Reviews = () => {
     }
 
     return (
-        <div className="my-8 md:my-16 ">
-            <h3 className="mt-8 md:mt-16 text-xl md:text-5xl font-bold md:leading-snug text-center">Reviews from Our Clients</h3>
-            <div>
-                {
-                    reviews?.map(review => <Review key={review.review_id} review={review}></Review>)
-                }
-            </div>
+        <div className="my-8 md:mt-16">
+            <h3 className="mt-16 mb-4 md:mb-8 text-xl md:text-5xl font-bold md:leading-snug text-center">Reviews from Our Clients</h3>
+            <Marquee pauseOnHover={true}>
+                <div className="flex">
+                    {
+                        reviews?.map(review => <Review key={review.review_id} review={review}></Review>)
+                    }
+                </div>
+            </Marquee>
         </div>
     );
 };
