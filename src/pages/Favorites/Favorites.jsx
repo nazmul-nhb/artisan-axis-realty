@@ -43,6 +43,8 @@ const Favorites = () => {
         )
     }
 
+
+    
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
             <h4
@@ -50,17 +52,17 @@ const Favorites = () => {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
-                className="text-center text-xl md:text-3xl font-bold">Favorite Estates</h4>
+                className="text-center text-xl md:text-3xl font-bold">Favorite Estates : {favEstates.length}</h4>
             <hr className="my-8 border-dotted border-t-2 border-teal-900" />
             {
                 favEstates.length < 1 && <div
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                     data-aos-offset="300"
                     data-aos-easing="ease-in-sine"
                     data-aos-duration="1000"
                     data-aos-delay="500"
                     className="h-[67vh] flex items-center justify-center">
-                    <h4 className="border shadow-lg shadow-red-800 border-red-600 p-6 text-xl md:text-3xl font-bold text-red-600 bg-red-100">Your Favorites List is Empty! </h4>
+                    <h4 className="border shadow-lg shadow-red-800 border-red-600 p-6 text-lg md:text-3xl font-bold text-red-600 bg-red-100">You Have No Favorite Estates! </h4>
                 </div>
             }
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

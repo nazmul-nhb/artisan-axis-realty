@@ -11,7 +11,7 @@ const Profile = () => {
                 <title>Profile: {user.displayName} - ArtisanAxis</title>
             </Helmet>
             <div
-                data-aos="zoom-out-down"
+                data-aos="zoom-in-down"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="500"

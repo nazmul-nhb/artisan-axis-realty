@@ -1,18 +1,17 @@
 import { Helmet } from "react-helmet-async";
 import ArtisanAxis from '../../assets/aa-logo.png'
-import siteBG from '../../assets/banner.jpeg'
 
 const About = () => {
     return (
-        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 flex flex-col items-center gap-6 bg-cover" style={{ backgroundImage: `url${siteBG}` }}>
+        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 flex flex-col items-center gap-6 bg-cover">
             <Helmet>
                 <title>About - ArtisanAxis</title>
             </Helmet>
-            <div className="w-full p-4 md:py-9 rounded-2xl flex justify-center items-center mb-6">
+            <div className="w-full p-4 md:py-9 rounded-2xl flex justify-center items-center mb-4 md:mb-6">
                 <h3 id="about-header" className="text-2xl md:text-4xl font-bold">About ArtisanAxis Realty</h3>
             </div>
             <div
-                data-aos="zoom-out-down"
+                data-aos="zoom-in-down"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
@@ -24,7 +23,7 @@ const About = () => {
             </div>
 
             <fieldset
-                data-aos="fade-left"
+                data-aos="fade-up"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
@@ -36,7 +35,7 @@ const About = () => {
             </fieldset>
 
             <fieldset
-                data-aos="fade-right"
+                data-aos="fade-down"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
@@ -48,7 +47,7 @@ const About = () => {
             </fieldset>
 
             <fieldset
-                data-aos="fade-left"
+                data-aos="fade-up"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
@@ -60,7 +59,7 @@ const About = () => {
             </fieldset>
 
             <p
-                data-aos="zoom-out-down"
+                data-aos="zoom-in-down"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"

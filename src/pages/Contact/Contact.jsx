@@ -31,7 +31,7 @@ const Contact = () => {
                 <title>Contact - ArtisanAxis</title>
             </Helmet>
             <div
-                data-aos="fade-right"
+                data-aos="zoom-in-down"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
@@ -43,7 +43,7 @@ const Contact = () => {
                 <img src={contactDoodle} alt="Contact Us" className="w-full md:w-4/5 px-6" />
             </div>
             <form
-                data-aos="fade-left"
+                data-aos="zoom-out-down"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"

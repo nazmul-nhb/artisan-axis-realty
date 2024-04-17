@@ -34,7 +34,7 @@ const UpdateProfile = () => {
                 <title>Update Profile: {user.displayName} - ArtisanAxis</title>
             </Helmet>
             <form
-                data-aos="zoom-out-up"
+                data-aos="zoom-in-up"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"

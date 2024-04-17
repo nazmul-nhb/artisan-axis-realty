@@ -7,7 +7,7 @@ import { GrLocation } from "react-icons/gr";
 const Estate = ({ estate }) => {
     const { id, estate_image, estate_title, segment_name, price, status, area, additional_info_1, location } = estate;
     return (
-        <div data-aos="zoom-out-left" data-aos-delay="500" data-aos-duration="1000" className={`flex flex-col gap-3 border p-4 rounded-lg shadow-md ${status === 'sale' ? 'shadow-[#16a34a]' : 'shadow-[#ea580c]'}`}>
+        <div data-aos="zoom-in-down" data-aos-duration="1000" className={`flex flex-col gap-3 border p-4 rounded-lg shadow-md ${status === 'sale' ? 'shadow-[#16a34a]' : 'shadow-[#ea580c]'}`}>
             <Link to={`/${id}`}>
                 <figure className='w-full'>
                     <img className='hover:scale-105 transition-all duration-500 rounded-lg' src={estate_image} alt={estate_title} />

@@ -9,6 +9,7 @@ import { GrLocation } from "react-icons/gr";
 import success from '../../assets/success.png';
 import { removeFromLocal, saveToLocal } from "../../utilities/local-storage";
 import { MdOutlineAreaChart } from "react-icons/md";
+import './TabStyles.css'
 
 const EstateDetails = () => {
     const [selectedEstate, setSelectedEstate] = useState({});
@@ -56,11 +57,11 @@ const EstateDetails = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className="space-y-8 px-3 py-2 border rounded-lg">
+                    <div className="space-y-8 px-3 py-2 border border-[#d4d4d4] rounded-lg">
                         <div className="flex flex-col lg:flex-row gap-6">
                             <div className="w-full lg:w-3/5">
                                 <div className="relative">
-                                    <img className="rounded-lg" src={estate_image} alt={estate_title} />
+                                    <img className="rounded-lg w-full" src={estate_image} alt={estate_title} />
                                     <h5 className={`bg-opacity-80 absolute top-2 right-0 px-4 text-lg md:text-2xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea5d0c]'}`}>{status === 'sale' ? 'Sale' : 'Rent'}</h5>
                                     <h3 className={`bg-opacity-80 absolute bottom-2 right-0 px-4 text-xl md:text-3xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea580c]'}`}>{price}</h3>
                                 </div>
