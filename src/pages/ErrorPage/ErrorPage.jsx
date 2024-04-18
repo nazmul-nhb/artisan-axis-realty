@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { Helmet } from "react-helmet-async";
+import 'animate.css';
 
 const ErrorPage = () => {
 
@@ -11,7 +12,7 @@ const ErrorPage = () => {
                 <Helmet>
                     <title>Error : : 404</title>
                 </Helmet>
-                <div className="container flex flex-col items-center justify-center px-5 mx-auto my-6 space-y-4 text-center">
+                <div className="animate__animated animate__wobble container flex flex-col items-center justify-center px-5 mx-auto my-6 space-y-4 text-center">
                     <div className="w-full text-center">
                         <h2 className="mb-8 font-extrabold text-9xl text-red-600">404</h2>
                     </div>

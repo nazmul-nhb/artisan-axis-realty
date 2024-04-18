@@ -1,19 +1,23 @@
 ## ArtisanAxis Realty - Where Artistry Meets Architecture
+- Type of Real Estate: **Specialty**
+- It includes: Hospitals, Schools, Religious Facilities, Transportation Terminals, Convention Centers, Art Galleries etc.
+
 ### Firebase Live Site Link:
-[Firebase Live Site](https://artisan-axis.web.app/)
+- [Firebase Live Site](https://artisan-axis.web.app/)
 
 ### Required NPM Utility Packages Used in the Project:
-- aos
-- swiper
-- react-hook-form
-- react-leaflet
+- [aos](https://michalsnik.github.io/aos/)
+- [animate.css](https://animate.style/)
+- [react-leaflet](https://react-leaflet.js.org/)
+- [react-hook-form](https://react-hook-form.com/)
+- [swiper](https://swiperjs.com/)
 
 ### Other NPM Utility Packages Used in the Project:
-- react-helmet-async
-- react-icons
-- react-toastify
-- react-tabs
-- react-fast-marquee
+- [react-helmet-async](https://www.npmjs.com/package/react-helmet-async)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [react-toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [react-tabs](https://www.npmjs.com/package/react-tabs)
+- [react-fast-marquee](https://www.react-fast-marquee.com/)
 
 ### Notable Features of the Website:
 - You can see **Buy Now/Rent Now** buttons on banner images on sliders based on if you can buy or rent them
