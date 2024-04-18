@@ -67,19 +67,19 @@ const EstateDetails = () => {
                                 </div>
                             </div>
                             <div className="w-full lg:w-2/5 flex flex-col gap-2">
-                                <h3 className={`text-lg md:text-2xl xl:text-3xl font-bold mb-3 ${status === 'sale' ? 'text-[#16a343]' : 'text-[#ea3c0c]'}`}>{estate_title}</h3>
+                                <h3 className={`text-lg md:text-2xl xl:text-3xl font-bold mb-3 ${status === 'sale' ? 'text-[#2c7844]' : 'text-[#ea3c0c]'}`}>{estate_title}</h3>
                                 <div className="flex flex-row justify-between">
-                                    <h4 className={`text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>{segment_name}</h4>
-                                    <h4 className={`flex items-center gap-1 text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><MdOutlineAreaChart /> {area}</h4>
+                                    <h4 className={`text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>{segment_name}</h4>
+                                    <h4 className={`flex items-center gap-1 text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><MdOutlineAreaChart /> {area}</h4>
                                 </div>
-                                <h4 className={`text-xs md:text-base border rounded-lg px-4 py-2 flex gap-2 items-center ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><GrLocation />{location?.street}, {location?.city}, {location?.state}-{location?.zip_code}</h4>
-                                <div className={`flex-grow mt-3 border px-4 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
+                                <h4 className={`text-xs md:text-base border rounded-lg px-4 py-2 flex gap-2 items-center ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><GrLocation />{location?.street}, {location?.city}, {location?.state}-{location?.zip_code}</h4>
+                                <div className={`flex-grow mt-3 border px-4 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
                                     <h3 className="md:text-xl font-medium">Facilities:</h3>
                                     {
                                         facilities?.map((facility, idx) => <li key={idx} className="text-sm md:text-base pl-4">{facility}</li>)
                                     }
                                 </div>
-                                <div className={`border px-4 py-2 ${status === 'sale' ? 'text-[#16a34a] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
+                                <div className={`border px-4 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
                                     <h3 className="md:text-xl font-medium">Special Features:</h3>
                                     <div className={`flex-grow flex gap-2 text-xs lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
                                         <h4 className="font-semibold">{additional_info_1?.split(': ')[0]}:</h4>

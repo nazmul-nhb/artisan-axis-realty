@@ -13,15 +13,26 @@ import { getStoredItems } from "../../utilities/local-storage";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [favCount, setFavCount] = useState(0);
-    // const [countLoading, setCountLoading] = useState(true);
     const { user, logOut } = useContext(AuthContext);
+    const [userName, setUserName] = useState('');
+    const [profilePicture, setProfilePicture] = useState('');
 
     useEffect(() => {
-        // setCountLoading(true);
         const favItems = getStoredItems('estates');
         setFavCount(favItems.length);
-        // setCountLoading(false);
     }, [favCount])
+
+    useEffect(() => {
+        // Update user profile information when user context changes
+        // Unfortunately It does not change userName and profilePicture automatically when user info updates, needs a reload
+        if (user) {
+            setUserName(user.displayName || 'Human');
+            setProfilePicture(user.photoURL || defaultPP);
+        } else {
+            setUserName('Human');
+            setProfilePicture(defaultPP);
+        }
+    }, [user]);
 
     const navLinks = <>
         <NavLink to={'/'}>Home</NavLink>
@@ -41,7 +52,9 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                toast.success("Logged out Successfully!");
+            })
             .catch(error => {
                 toast.error(error.message.split(': ')[1]);
             })
@@ -73,7 +86,7 @@ const Navbar = () => {
                 {
                     user
                         ? <div className="flex items-center gap-1 md:gap-2">
-                            <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full border-2 p-[2px] border-green-900" src={user?.photoURL ? user?.photoURL : defaultPP} alt={user?.displayName} title={user?.displayName} /></Link>
+                            <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full border-2 p-[2px] border-green-900" src={profilePicture} alt={userName} title={userName} /></Link>
 
                             <div className="cursor-pointer text-3xl md:text-5xl text-[#e85800] hover:text-[#236d3e]" title="Logout" onClick={handleLogout}>
                                 <FiLogOut />

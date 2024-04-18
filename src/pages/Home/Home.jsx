@@ -32,13 +32,13 @@ const Home = () => {
     return (
         <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4">
             <Helmet>
-                <title>ArtisanAxis Realty</title>
+                <title>Home - ArtisanAxis Realty</title>
             </Helmet>
             <div
                 data-aos="flip-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
-                data-aos-duration="4000"
+                data-aos-duration="3000"
                 className="my-2 md:my-4 flex flex-col-reverse xl:flex-row items-center justify-between px-2 md:px-8 py-2 rounded-lg shadow-xl bg-gradient-to-r from-[#0b1d1157] to-[#4c00ffa3]">
 
                 {/* Banner */}

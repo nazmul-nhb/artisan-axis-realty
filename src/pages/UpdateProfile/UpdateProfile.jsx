@@ -45,7 +45,7 @@ const UpdateProfile = () => {
                 </div>
                 <h2 className="text-lg md:text-2xl font-semibold text-center">Update Your Profile</h2>
                 <div className="flex flex-col gap-3">
-                    <label htmlFor="name">Your Name</label>
+                    <label className="font-medium" htmlFor="name">Update Your Name</label>
                     <input
                         {...register("name", {
                             value: `${user?.displayName || ''}`,
@@ -58,7 +58,7 @@ const UpdateProfile = () => {
                     }
                 </div>
                 <div className="flex flex-col gap-3">
-                    <label htmlFor="email">Your Email</label>
+                    <label className="font-medium" htmlFor="email">Your Email</label>
                     <input
                         {...register("email", {
                             value: `${user?.email || ''}`
@@ -66,14 +66,17 @@ const UpdateProfile = () => {
                         className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="name" id="name" disabled placeholder="Your Name" />
                 </div>
                 <div className="flex flex-col gap-3">
-                    <label htmlFor="photo">Your Photo</label>
+                    <label className="font-medium" htmlFor="photo">Update Your Photo</label>
                     <input
                         {...register("photo", {
                             value: `${user?.photoURL || ''}`,
                             required:
-                                { value: false, message: "You must provide a valid photo URL." }
+                                { value: true, message: "You must provide a valid photo URL." }
                         })}
                         className="p-2 rounded-lg bg-[#F3F3F3]" type="text" name="photo" id="photo" placeholder="Your Photo URL" />
+                    {
+                        errors.photo && <p className="text-red-700">{errors.photo.message}</p>
+                    }
                 </div>
                 <Button buttonType={'submit'} className={'border w-full text-xl font-semibold'} buttonText={'Save Changes'} color={'teal'} hoverColor={'white'} hoverBgColor={'transparent'}></Button>
             </form>
