@@ -192,7 +192,7 @@ const Register = () => {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
-                className="flex flex-col gap-2 pt-6 lg:pt-24">
+                className="flex flex-col gap-2 pt-6 lg:pt-20">
                 <h3 className="text-center">Or</h3>
                 <h3 className="text-center text-xl font-semibold">Login Using Social Media</h3>
                 <div className="flex gap-4 justify-center items-center text-3xl">

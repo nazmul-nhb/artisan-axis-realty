@@ -77,7 +77,7 @@ const Login = () => {
     }
 
     return (
-        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col lg:flex-row justify-around items-center">
+        <section className="mx-2 md:mx-8 my-2 md:my-8 p-2 md:px-4 text-teal-900 space-y-6 flex flex-col lg:flex-row justify-around items-around">
             <Helmet>
                 <title>Login - ArtisanAxis</title>
             </Helmet>
@@ -86,7 +86,7 @@ const Login = () => {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
-                onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md">
+                onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6 w-[96%] md:w-4/5 lg:w-1/2 px-4 lg:px-20 py-4 lg:py-10 bg-white shadow-lg shadow-[#3c3939] border border-[#d3d0d0] rounded-md mx-auto">
                 <h2 className="text-2xl font-medium">Please, Login</h2>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="email">Your Email</label>
@@ -128,14 +128,9 @@ const Login = () => {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
-                className="flex flex-col gap-2">
+                className="flex flex-col gap-2 pt-6 lg:pt-20">
                 <h3 className="text-center">Or</h3>
-                <h3
-                    data-aos="fade-top"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-sine"
-                    data-aos-duration="1000"
-                    className="text-center text-xl font-semibold">Login Using Social Media</h3>
+                <h3 className="text-center text-xl font-semibold">Login Using Social Media</h3>
                 <div className="flex gap-4 justify-center items-center text-3xl">
                     <button
                         data-aos="fade-left"
