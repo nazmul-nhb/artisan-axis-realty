@@ -92,12 +92,12 @@ const EstateDetails = () => {
                                     }
                                 </div>
                                 <div className={`border px-4 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
-                                    <h3 className="md:text-xl font-medium">Special Features:</h3>
-                                    <div className={`flex-grow flex gap-2 text-xs lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
+                                    <h3 className="md:text-xl font-medium">Other Features:</h3>
+                                    <div className={`flex-grow flex gap-2 text-xs lg:text-base pl-4 ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
                                         <h4 className="font-semibold">{additional_info_1?.split(': ')[0]}:</h4>
                                         <h4 className="">{additional_info_1?.split(': ')[1]}</h4>
                                     </div>
-                                    <div className={`flex-grow flex gap-2 text-xs lg:text-base ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
+                                    <div className={`flex-grow flex gap-2 text-xs lg:text-base pl-4 ${status === 'sale' ? 'text-[#457456]' : 'text-[#8d6a57]'}`}>
                                         <h4 className="font-semibold">{additional_info_2?.split(': ')[0]}:</h4>
                                         <h4 className="">{additional_info_2?.split(': ')[1]}</h4>
                                     </div>

@@ -3,7 +3,7 @@ import Review from "../Review/Review";
 import Marquee from "react-fast-marquee";
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState([]);
     const [reviewLoading, setReviewLoading] = useState(true);
     useEffect(() => {
         setReviewLoading(true);

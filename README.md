@@ -6,17 +6,17 @@
 - [Firebase Live Site](https://artisan-axis.web.app/)
 
 ### Mentioned NPM Utility Packages Used in this Project:
-- [aos](https://michalsnik.github.io/aos/) for On Scroll Animation
-- [animate.css](https://animate.style/) for Animation Effects
-- [react-leaflet](https://react-leaflet.js.org/) for Showing Map
+- [aos](https://michalsnik.github.io/aos/) for Animation On Scroll
+- [animate.css](https://animate.style/) for Animation Effects on ErrorPage
+- [react-leaflet](https://react-leaflet.js.org/) for Showing Estate Location on Map
 - [react-hook-form](https://react-hook-form.com/) for Handling Forms
 - [swiper](https://swiperjs.com/) for Slider/Swiper on Homepage Banner
 
 ### Other NPM Utility Packages Used in this Project:
-- [react-helmet-async](https://www.npmjs.com/package/react-helmet-async) for Dynamic Page Title
+- [react-helmet-async](https://www.npmjs.com/package/react-helmet-async) for Dynamic Page Titles
 - [react-icons](https://react-icons.github.io/react-icons/) for Showing Icons
 - [react-toastify](https://fkhadra.github.io/react-toastify/introduction) for Showing Toasts
-- [react-tabs](https://www.npmjs.com/package/react-tabs) for Showing Tabs
+- [react-tabs](https://www.npmjs.com/package/react-tabs) for Showing Tabs in Estate Details
 - [react-fast-marquee](https://www.react-fast-marquee.com/) for Horizontal Auto-Scroll on Homepage in Reviews Section
 
 ### Notable Features of the Website:

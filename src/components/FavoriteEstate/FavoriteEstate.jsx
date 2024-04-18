@@ -19,10 +19,11 @@ const FavoriteEstate = ({ estate, handleDelete, estateLoading }) => {
     }
     return (
         <div
-            data-aos="fade-left"
+            data-aos="fade-top"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
             data-aos-duration="1000"
+            data-aos-delay="500"
             className={`flex flex-col gap-3 border p-4 rounded-lg shadow-md ${status === 'sale' ? 'shadow-[#16a34a]' : 'shadow-[#ea580c]'}`}>
             <Helmet>
                 <title>Favorite Estates - ArtisanAxis</title>

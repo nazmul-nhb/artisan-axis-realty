@@ -65,13 +65,13 @@ const Navbar = () => {
             <div className="lg:hidden text-4xl md:text-5xl cursor-pointer" onClick={() => setOpen(!open)}>
                 {
                     open
-                        ? <MdOutlineClose className="text-[#e85800] hover:text-[#236d3e]"></MdOutlineClose>
-                        : <MdMenuOpen className="text-[#236d3e] hover:text-[#e85800]"></MdMenuOpen>
+                        ? <MdOutlineClose className="text-[#e85800] hover:text-[#236d3e] transform transition-all duration-1000"></MdOutlineClose>
+                        : <MdMenuOpen className="text-[#236d3e] hover:text-[#e85800] transform transition-all duration-1000"></MdMenuOpen>
                 }
             </div>
             <div className="flex justify-between items-center w-full">
                 <Link to='/'>
-                    <div className="flex items-center gap-1" title="ArtisanAxis Realty"><img src={logo} alt="Logo" className="w-11 md:w-16 h-9 md:h-14" />
+                    <div className="flex items-center gap-1" title="ArtisanAxis Realty"><img src={logo} alt="Logo" className="w-10 md:w-16 h-9 md:h-14" />
                         <div className="flex flex-col">
                             <h3 className="text-base md:text-2xl font-semibold"><span className="text-[#16a34a]"><span className="text-xl md:text-4xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-xl md:text-4xl">&#9074;</span>xis</span> Realty</h3>
                             <h6 className="text-[9px] md:text-sm text-[#ea0c0c]">Where Artistry Meets Architecture</h6>
@@ -85,10 +85,10 @@ const Navbar = () => {
                 </div>
                 {
                     user
-                        ? <div className="flex items-center gap-1 md:gap-2">
-                            <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full border-2 p-[2px] border-green-900" src={profilePicture} alt={userName} title={userName} /></Link>
+                        ? <div className="flex items-center gap-2 md:gap-3">
+                            <Link to={'/profile'}><img className="w-9 md:w-14 h-9 md:h-14 rounded-full border-2 p-[2px] border-green-900 hover:opacity-75 transform transition-all duration-1000" src={profilePicture} alt={userName} title={userName} /></Link>
 
-                            <div className="cursor-pointer text-3xl md:text-5xl text-[#e85800] hover:text-[#236d3e]" title="Logout" onClick={handleLogout}>
+                            <div className="cursor-pointer text-3xl md:text-5xl text-[#e85800] hover:text-[#236d3e] transform transition-all duration-1000" title="Logout" onClick={handleLogout}>
                                 <FiLogOut />
                                 {/* <Button className="border text-sm md:text-xl xl:text-2xl font-bold" buttonText={"Logout"} color={"teal"} hoverColor={"white"} hoverBgColor={"transparent"}></Button> */}
                             </div>
