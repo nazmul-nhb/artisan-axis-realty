@@ -20,6 +20,8 @@
 - You'll see **R/S** on estate cards on homepage based on whether the estate is for sale or rent
 - You'll see different colors for estates for sale or rent on these cards
 - If you click on **View Property** and you're not logged in, you'll be redirected to login page. After successful login, you will be redirected to the desired estate details page
+- On homepage, you can see a section titled **Our Services & Benefits**
+- Below that you will find another section titled **Reviews from Our Clients**. It will show reviews with stars with horizontal auto-scroll. You can point your mouse on a review and auto-scroll will pause.
 - You can add an estate in your favorites list for future observation from estate details page, the data will be stored on local storage
 - On *estate details* page, you'll see a button either as **Buy Now/Rent Now** and when you click on this button you'll see a confirmation pop-up modal
 - If you have added an estate in favorite list previously, **Buy Now** or **Rent Now** button will remove that estate from favorite list with a toast

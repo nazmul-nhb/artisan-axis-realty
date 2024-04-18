@@ -59,21 +59,33 @@ const EstateDetails = () => {
                 <TabPanel>
                     <div className="space-y-8 px-3 py-2 border border-[#d4d4d4] rounded-lg">
                         <div className="flex flex-col lg:flex-row gap-6">
-                            <div className="w-full lg:w-3/5">
+                            <div
+                                data-aos="zoom-out-down"
+                                data-aos-offset="300"
+                                data-aos-easing="ease-in-sine"
+                                data-aos-duration="1000"
+                                className="w-full lg:w-3/5">
                                 <div className="relative">
                                     <img className="rounded-lg w-full" src={estate_image} alt={estate_title} />
                                     <h5 className={`bg-opacity-80 absolute top-2 right-0 px-4 text-lg md:text-2xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea5d0c]'}`}>{status === 'sale' ? 'Sale' : 'Rent'}</h5>
                                     <h3 className={`bg-opacity-80 absolute bottom-2 right-0 px-4 text-xl md:text-3xl font-semibold text-white border ${status === 'sale' ? 'border-[#16a34a] bg-[#16a34a]' : 'border-[#ea580c] bg-[#ea580c]'}`}>{price}</h3>
                                 </div>
                             </div>
-                            <div className="w-full lg:w-2/5 flex flex-col gap-2">
+                            <div
+                                data-aos="zoom-out-up"
+                                data-aos-offset="300"
+                                data-aos-easing="ease-in-sine"
+                                data-aos-duration="1000"
+                                className="w-full lg:w-2/5 flex flex-col gap-2">
                                 <h3 className={`text-lg md:text-2xl xl:text-3xl font-bold mb-3 ${status === 'sale' ? 'text-[#2c7844]' : 'text-[#ea3c0c]'}`}>{estate_title}</h3>
                                 <div className="flex flex-row justify-between">
                                     <h4 className={`text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>{segment_name}</h4>
                                     <h4 className={`flex items-center gap-1 text-xs md:text-base border rounded-lg px-3 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><MdOutlineAreaChart /> {area}</h4>
                                 </div>
-                                <h4 className={`text-xs md:text-base border rounded-lg px-4 py-2 flex gap-2 items-center ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><GrLocation />{location?.street}, {location?.city}, {location?.state}-{location?.zip_code}</h4>
-                                <div className={`flex-grow mt-3 border px-4 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
+                                <h4 data-aos-delay="1300"
+                                    className={`text-xs md:text-base border rounded-lg px-4 py-2 flex gap-2 items-center ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}><GrLocation />{location?.street}, {location?.city}, {location?.state}-{location?.zip_code}</h4>
+                                <div data-aos-delay="1500"
+                                    className={`flex-grow mt-3 border px-4 py-2 ${status === 'sale' ? 'text-[#2c7844] border-[#16a34a] bg-[#e3f8eb]' : 'text-[#ea580c] border-[#ea580c] bg-[#f9f1ee]'}`}>
                                     <h3 className="md:text-xl font-medium">Facilities:</h3>
                                     {
                                         facilities?.map((facility, idx) => <li key={idx} className="text-sm md:text-base pl-4">{facility}</li>)
