@@ -112,6 +112,18 @@ const Register = () => {
                     }
                 </div>
                 <div className="flex flex-col gap-3">
+                    <label className="font-medium" htmlFor="email">Your Email *</label>
+                    <input
+                        {...register("email", {
+                            required:
+                                { value: true, message: "You must provide a valid email address." }
+                        })}
+                        className="p-2 rounded-lg bg-[#F3F3F3]" type="email" name="email" id="email" placeholder="Enter Your Email" />
+                    {
+                        errors.email && <p className="text-red-700">{errors.email.message}</p>
+                    }
+                </div>
+                <div className="flex flex-col gap-3">
                     <label className="font-medium" htmlFor="photo">Your Photo URL *</label>
                     <input
                         {...register("photo", {
@@ -123,18 +135,6 @@ const Register = () => {
                         errors.photo && <p className="text-red-700">{errors.photo.message}</p>
                     }
                 </div>
-                <div className="flex flex-col gap-3">
-                    <label className="font-medium" htmlFor="email">Your Email *</label>
-                    <input
-                        {...register("email", {
-                            required:
-                                { value: true, message: "You must provide a valid email address." }
-                        })}
-                        className="p-2 rounded-lg bg-[#F3F3F3]" type="email" name="email" id="email" placeholder="Enter Your Email" />
-                </div>
-                {
-                    errors.email && <p className="text-red-700">{errors.email.message}</p>
-                }
                 <div className="flex flex-col gap-3">
                     <label className="font-medium" htmlFor="password">Your Password *</label>
                     <div className="relative">

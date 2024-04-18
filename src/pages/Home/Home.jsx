@@ -53,9 +53,10 @@ const Home = () => {
 
             {/* Find Property */}
             <div className="my-8 md:my-16 flex flex-col gap-3 md:gap-6 justify-center items-center pr-4 text-center mx-auto">
-                <h3 className="text-xl md:text-5xl font-bold md:leading-snug"><span className="text-[#16a34a]"><span className="text-2xl md:text-6xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-2xl md:text-6xl">&#9074;</span>xis</span> Realty
-                    <br />
-                    Find Property for Yor Community</h3>
+                <h3 className="text-xl md:text-5xl font-bold md:leading-snug">
+                    {/* <span className="text-[#16a34a]"><span className="text-2xl md:text-6xl">&#9074;</span>rtisan</span><span className="text-[#ea580c]"><span className="text-2xl md:text-6xl">&#9074;</span>xis</span> Realty
+                    <hr className="my-6" /> */}
+                    Find Estates for Yor Community</h3>
                 <p className="w-[88%] md:w-3/5 text-[#898585] text-base md:text-xl">Every property is a masterpiece, meticulously crafted to blend artistry with architectural brilliance.
                     <br />
                     Select a property from the list below for your community.</p>
