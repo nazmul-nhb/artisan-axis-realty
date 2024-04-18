@@ -1,20 +1,21 @@
-# ArtisanAxis Realty - Where Artistry Meets Architecture
-[Firebase Live Page](https://artisan-axis.web.app/)
+## ArtisanAxis Realty - Where Artistry Meets Architecture
+### Firebase Live Site Link:
+[Firebase Live Site](https://artisan-axis.web.app/)
 
-## Required NPM Utility Packages Used in the Project:
+### Required NPM Utility Packages Used in the Project:
 - aos
 - swiper
 - react-hook-form
 - react-leaflet
 
-## Other NPM Utility Packages Used in the Project:
+### Other NPM Utility Packages Used in the Project:
 - react-helmet-async
 - react-icons
 - react-toastify
 - react-tabs
 - react-fast-marquee
 
-## Notable Features of the Website:
+### Notable Features of the Website:
 - You can see **Buy Now/Rent Now** buttons on banner images on sliders based on if you can buy or rent them
 - You'll see **R/S** on estate cards on homepage based on whether the estate is for sale or rent
 - You'll see different colors for estates for sale or rent on these cards
