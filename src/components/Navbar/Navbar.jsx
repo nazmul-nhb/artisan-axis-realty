@@ -13,7 +13,7 @@ import { getStoredItems } from "../../utilities/local-storage";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [favCount, setFavCount] = useState(0);
-    const { user, logOut, userLoading } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [userName, setUserName] = useState('');
     const [profilePicture, setProfilePicture] = useState('');
 
@@ -24,7 +24,8 @@ const Navbar = () => {
 
     useEffect(() => {
         // Update user profile information when user context changes
-        // Unfortunately It does not change userName and profilePicture automatically when user info updates, needs a reload
+        // Unfortunately It does not change userName and profilePicture automatically when user info updates
+        // It needs a reload
         if (user) {
             setUserName(user.displayName || 'Human');
             setProfilePicture(user.photoURL || defaultPP);
@@ -58,16 +59,6 @@ const Navbar = () => {
             .catch(error => {
                 toast.error(error.message.split(': ')[1]);
             })
-    }
-
-    if (userLoading) {
-        return (
-            <div className="flex items-center justify-center space-x-2">
-                <div className="w-4 h-4 rounded-full animate-pulse dark:bg-blue-600"></div>
-                <div className="w-5 h-5 rounded-full animate-pulse dark:bg-blue-600"></div>
-                <div className="w-6 h-6 rounded-full animate-pulse dark:bg-blue-600"></div>
-            </div>
-        )
     }
 
     return (
