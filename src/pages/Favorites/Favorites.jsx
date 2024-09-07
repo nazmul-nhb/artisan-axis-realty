@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteEstate from "../../components/FavoriteEstate/FavoriteEstate";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { removeFavorite } from "../../store/features/favoritesSlice";
 
 const Favorites = () => {
@@ -42,7 +41,6 @@ const Favorites = () => {
 
 	const handleDelete = (estateId) => {
 		dispatch(removeFavorite(estateId)); // Redux action
-		toast.info(`Removed from Favorites`, { autoClose: 3000 });
 	};
 
 	if (estateLoading) {

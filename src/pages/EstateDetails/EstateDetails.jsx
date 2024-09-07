@@ -10,7 +10,6 @@ import success from "../../assets/success.png";
 import { MdOutlineAreaChart } from "react-icons/md";
 import "./TabStyles.css";
 import { useDispatch, } from "react-redux";
-import { toast } from "react-toastify";
 import { addFavorite } from "../../store/features/favoritesSlice";
 
 const EstateDetails = () => {
@@ -29,13 +28,6 @@ const EstateDetails = () => {
 		setSelectedEstate(clickedEstate);
 		setEstateLoading(false);
 	}, [estates, id]);
-
-	const handleAddFavorite = (estateId) => {
-		dispatch(addFavorite(estateId)); // Redux action
-		toast.success(`Added to Favorites`, {
-			autoClose: 3000,
-		});
-	};
 
 	const {
 		estate_image,
@@ -246,7 +238,9 @@ const EstateDetails = () => {
 								<div>
 									<Button
 										onClick={() =>
-											handleAddFavorite(selectedEstate.id)
+											dispatch(
+												addFavorite(selectedEstate.id)
+											)
 										}
 										className={"border font-semibold"}
 										buttonText={"Add to Favorites"}
