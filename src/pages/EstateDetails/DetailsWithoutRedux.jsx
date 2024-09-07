@@ -7,11 +7,9 @@ import { Helmet } from "react-helmet-async";
 import Button from "../../components/Button/Button";
 import { GrLocation } from "react-icons/gr";
 import success from "../../assets/success.png";
+import { removeFromLocal, saveToLocal } from "../../utilities/local-storage";
 import { MdOutlineAreaChart } from "react-icons/md";
 import "./TabStyles.css";
-import { useDispatch, } from "react-redux";
-import { toast } from "react-toastify";
-import { addFavorite } from "../../store/features/favoritesSlice";
 
 const EstateDetails = () => {
 	const [selectedEstate, setSelectedEstate] = useState({});
@@ -21,21 +19,12 @@ const EstateDetails = () => {
 	const [tabIndex, setTabIndex] = useState(0);
 	const [showModal, setShowModal] = useState(false);
 
-	const dispatch = useDispatch();
-
 	useEffect(() => {
 		setEstateLoading(true);
 		const clickedEstate = estates.find((estate) => estate.id === id);
 		setSelectedEstate(clickedEstate);
 		setEstateLoading(false);
 	}, [estates, id]);
-
-	const handleAddFavorite = (estateId) => {
-		dispatch(addFavorite(estateId)); // Redux action
-		toast.success(`Added to Favorites`, {
-			autoClose: 3000,
-		});
-	};
 
 	const {
 		estate_image,
@@ -246,7 +235,10 @@ const EstateDetails = () => {
 								<div>
 									<Button
 										onClick={() =>
-											handleAddFavorite(selectedEstate.id)
+											saveToLocal(
+												selectedEstate.id,
+												"estates"
+											)
 										}
 										className={"border font-semibold"}
 										buttonText={"Add to Favorites"}
@@ -263,6 +255,10 @@ const EstateDetails = () => {
 									<Button
 										onClick={() => {
 											setShowModal(true);
+											removeFromLocal(
+												selectedEstate.id,
+												"estates"
+											);
 										}}
 										className={"border font-semibold"}
 										buttonText={`${

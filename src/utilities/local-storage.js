@@ -15,7 +15,7 @@ const saveToLocal = (itemID, itemKey) => {
     if (!filteredItems) {
         storedItems.push(itemID);
         localStorage.setItem(itemKey, JSON.stringify(storedItems));
-        toast.success(`Successfully Added to Favorites`, { autoClose: 3000 });
+        toast.success(`Added to Favorites`, { autoClose: 3000 });
     } else {
         toast.warn(`Already Exists in Favorites`, { autoClose: 3000 })
     }
@@ -27,7 +27,7 @@ const removeFromLocal = (itemID, itemKey) => {
 
     if (filteredItems.length < storedItems.length) {
         localStorage.setItem(itemKey, JSON.stringify(filteredItems));
-        toast.info(`Property Removed form Favorites`, { theme: "colored", autoClose: 3000 });
+        toast.info(`Removed form Favorites`, { theme: "colored", autoClose: 3000 });
     }
 }
 
